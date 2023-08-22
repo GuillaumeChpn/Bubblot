@@ -1853,7 +1853,7 @@ angular.module('bubblot', []).controller('mainController', ['$scope', '$element'
         }
 
         couchBubblot1.insert("bubblot", {
-            "data_key": [year, 06, 20, hours, minutes, seconds, 1], //change for each bubblot
+            "data_key": [year, 0o6, 20, hours, minutes, seconds, 1], //change for each bubblot
             "data": {
                 pumpLatitude: $scope.leftDataPump.localLat,
                 pumpLongitude: $scope.leftDataPump.localLong,

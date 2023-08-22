@@ -3,8 +3,8 @@
 giCamFlagSepGraph                        1
 
 ! Cam num
-gpiCamNum[0]                             1
-gpiCamNum[1]                             1
+gpiCamNum[0]                             0
+gpiCamNum[1]                             0
 
 ! Flag si sync cam
 giCamFlagSync                            1
