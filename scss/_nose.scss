@@ -1,0 +1,156 @@
+@import "mixins";
+// Cadran Nose
+
+$widthDotWaring: 13.3%;
+$positionXDotWarning: 43.3%;
+
+.nose {
+  .cadran {
+    background: url("../img/nose/cadran2.svg") no-repeat center;
+    background-size: 100% 100%;
+  }
+
+  .progress-pie {
+    width: 100%;
+    height: 100%;
+    background-color: $colorProgressPie;
+    @include centerItem($centerValue);
+    z-index: 2;
+  }
+
+  .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+    &.reverse {
+      transform: translateX(-50%) translateY(-50%) rotate(223deg);
+    }
+  }
+
+  .warning {
+    position: absolute;
+    top: $positionXDotWarning;
+    width: $widthDotWaring;
+    height: $widthDotWaring;
+    background-color: $secondColor;
+    z-index: 20;
+    @include border(50%);
+    @include centerItemX($centerValue);
+    .dot {
+      width: $widthDotWaring - 1.3%;
+      height: $widthDotWaring - 1.3%;
+      z-index: 21;
+      @include border(50%);
+      animation: recordOn 0.5s infinite;
+      @include centerItem($centerValue);
+    }
+  }
+
+  .btn-draw {
+    bottom: 9.3%;
+    padding: 3px 6px;
+    color: $activeColor;
+    text-transform: uppercase;
+    border: 1px solid $activeColor;
+    z-index: 10;
+    pointer-events: none;
+    @include border(3px);
+    @include fontUse($fontFamilly, 9px, $fontWeight);
+    @include centerItemX($centerValue);
+    //animation: recordOn 2s infinite;
+  }
+  .graph-container {
+    position: absolute;
+    @include centerItem($centerValue);
+    width: 45%;
+    height: 45%;
+    z-index: 11;
+  }
+  .graph {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    .circle1{
+      position: absolute;
+      width: 90%;
+      height: 90%;
+      border-radius: 50%;
+      border: 3px solid black;
+      @include centerItem($centerValue);
+    }
+    .circle2{
+      position: absolute;
+      width: 70%;
+      height: 70%;
+      border-radius: 50%;
+      border: 3px solid black;
+      @include centerItem($centerValue);
+    }
+    .circle3{
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      border-radius: 50%;
+      border: 3px solid black;
+      @include centerItem($centerValue);
+    }
+    .circle4{
+      position: absolute;
+      width: 30%;
+      height: 30%;
+      border-radius: 50%;
+      border: 3px solid black;
+      @include centerItem($centerValue);
+    }
+    .circle5{
+      position: absolute;
+      width: 10%;
+      height: 10%;
+      border-radius: 50%;
+      @include centerItem($centerValue);
+      background-color: black;
+    }
+    .detection{
+      position: absolute;
+      border-radius: 50%;
+      background-color: red;
+      animation: blink 1s linear infinite;
+    }
+    @keyframes blink{
+      0%{opacity: 0;}
+      50%{opacity: .5;}
+      100%{opacity: 1;}
+      }
+  }
+
+  &.focus-left {
+    .cadran {
+      background: url("../img/nose/cadran2.svg") no-repeat center;
+      background-size: 100% 100%;
+    }
+
+    .btn-draw {
+      pointer-events: auto;
+      cursor: pointer;
+      @include fontUse($fontFamilly, 25px, $fontWeight);
+    }
+  }
+}
+
+// ANIMATION
+@keyframes recordOn {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

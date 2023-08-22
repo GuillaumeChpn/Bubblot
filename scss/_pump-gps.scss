@@ -1,0 +1,51 @@
+@import "mixins";
+// Cadran pump-gps
+.pump-gps {
+
+   .cadran {
+      background: url('../img/PumpGpsCompas/PumpGpsCompasCadran.svg') no-repeat center;
+      background-size: 103% 103%;
+   }
+   .compass{
+           position: absolute;
+            left: 45%;
+            top: 17%;
+            width:10%;
+            height:66%;
+            background: url('../img/PumpGpsCompas/PumpGpsCompasHand.svg') no-repeat center;
+            z-index: 12;
+            transform-origin: 50% 50%;
+    }
+   &.focus-left {
+
+      .cadran {
+            background: url('../img/PumpGpsCompas/PumpGpsCompasCadran.svg') no-repeat center;
+            background-size: 103% 103%;
+      }
+
+      .target, .local{
+            position: absolute;
+            width: 32%;
+            height: 26%;
+            text-align: left;
+            font-size: 100%;
+            font-weight: 100;
+            z-index:13;
+            display: block;
+            input{
+                height: 25%;
+                width: 68%;
+            }
+        }
+        .target{
+            left: 55%;
+            top: 32%;
+            line-height: 3.2;
+        }
+        .local{
+            left: 15%;
+            top: 33%;
+            line-height: 3.2;
+        }
+    }    
+}

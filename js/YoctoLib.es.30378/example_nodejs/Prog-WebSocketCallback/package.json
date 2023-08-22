@@ -1,0 +1,9 @@
+{
+  "name": "prog-websocketcallback",
+  "author": "Yoctopuce",
+  "description": "Yoctopuce Prog-WebSocketCallback example",
+  "dependencies": {
+    "ws": "^1.0.1",
+    "yoctolib-es2017": "^1.10.30378"
+  }
+}

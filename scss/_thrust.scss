@@ -1,0 +1,236 @@
+@import "mixins";
+// Cadran thrust
+
+$colorProgressPie: $secondColor;
+$heightCircle: 240px;
+
+$heightNeedle: 20%;
+$heightNeedleFocus: 40px;
+
+$positionTopNeedle1: 28.6%;
+$positionLeftNeedle1: $positionTopNeedle1;
+
+$positionTopNeedle2: $positionTopNeedle1;
+$positionLeftNeedle2: 51.3%;
+
+$positionTopNeedle3: $positionLeftNeedle2;
+$positionLeftNeedle3: $positionTopNeedle1;
+
+$positionTopNeedle4: $positionTopNeedle3;
+$positionLeftNeedle4: $positionLeftNeedle2;
+
+$positionTopNeedle1Focus: 96px;
+$positionLeftNeedle1Focus: $positionTopNeedle1Focus;
+
+$positionTopNeedle2Focus: $positionTopNeedle1Focus;
+$positionLeftNeedle2Focus: 164px;
+
+$positionTopNeedle3Focus: $positionLeftNeedle2Focus;
+$positionLeftNeedle3Focus: $positionTopNeedle1Focus;
+
+$positionTopNeedle4Focus: $positionTopNeedle3Focus;
+$positionLeftNeedle4Focus: $positionLeftNeedle2Focus;
+
+.thrust {
+
+   .cadran {
+      background: url('../img/thrust/cadran-small.svg') no-repeat center;
+      background-size: 229% 230%;
+      pointer-events: none;
+   }
+
+   .progress-pie {
+      width: 100%;
+      height: 100%;
+      background-color: $colorProgressPie;
+      @include centerItem($centerValue);
+      z-index: 2;
+   }
+
+   .circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+      transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+   }
+
+   .thrust-top-btn {
+      position: absolute;
+      top: 26%;
+      left:50%;
+      -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0);
+       -moz-transform: translateX(-50%) translateY(-50%) translateZ(0);
+       -ms-transform: translateX(-50%) translateY(-50%) translateZ(0);
+       transform: translateX(-50%) translateY(-50%) translateZ(0);
+      width: 35%;
+      height: 15%;
+      z-index: 13;
+      background: url('../img/thrust/btn-off.svg') no-repeat center;
+      background-size: 70% 100%;
+      pointer-events: none;
+      &.on {
+         background: url('../img/thrust/btn-on.svg') no-repeat center;
+         background-size: 70% 100%;
+         width: 28%;
+        height: 10%;  
+    }
+   }
+
+   .thrust-bottom-btn {
+      position: absolute;
+      top: 74%;
+      left:50%;
+      -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0);
+       -moz-transform: translateX(-50%) translateY(-50%) translateZ(0);
+       -ms-transform: translateX(-50%) translateY(-50%) translateZ(0);
+       transform: translateX(-50%) translateY(-50%) translateZ(0);
+      width: 35%;
+      height: 15%;
+      z-index: 13;
+      background: url('../img/thrust/btn-off.svg') no-repeat center;
+      background-size: 70% 100%;
+      pointer-events: none;
+      &.on {
+         background: url('../img/thrust/btn-on.svg') no-repeat center;
+         background-size: 70% 100%;
+         width: 28%;
+         height: 10%;
+    }
+   }
+
+   .needle-engine-1, .needle-engine-2, .needle-engine-3, .needle-engine-4 {
+      position: absolute;
+      width: $heightNeedle;
+        height: $heightNeedle;
+      z-index: 11;
+      @include timeAnimation($timeAnimation);
+      display: none;
+      &.on {
+         display: block;
+        }
+   }
+
+   .needle-engine-1 {
+      top: $positionTopNeedle1;
+      left: $positionLeftNeedle1;
+      background: url('../img/thrust/needle.svg') no-repeat center;
+   }
+
+   .needle-engine-2 {
+      top: $positionTopNeedle2;
+      left: $positionLeftNeedle2;
+      background: url('../img/thrust/needle.svg') no-repeat center;
+   }
+
+   .needle-engine-3 {
+      top: $positionTopNeedle3;
+      left: $positionLeftNeedle3;
+      background: url('../img/thrust/needle.svg') no-repeat center;
+   }
+
+   .needle-engine-4 {
+      top: $positionTopNeedle4;
+      left: $positionLeftNeedle4;
+      background: url('../img/thrust/needle.svg') no-repeat center;
+   }
+
+   .radius-engine-1-container, .radius-engine-2-container, .radius-engine-3-container, .radius-engine-4-container{
+       width: 22%;
+        height: 21%;
+       -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0);
+       -moz-transform: translateX(-50%) translateY(-50%) translateZ(0);
+       -ms-transform: translateX(-50%) translateY(-50%) translateZ(0);
+       transform: translateX(-50%) translateY(-50%) translateZ(0);
+       z-index: 12;
+       display: none;
+       &.on {
+         display: block;
+        }
+       .radius{
+           position: absolute;
+           top: 50%;
+           left:50%;
+           -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0);
+           -moz-transform: translateX(-50%) translateY(-50%) translateZ(0);
+           -ms-transform: translateX(-50%) translateY(-50%) translateZ(0);
+           transform: translateX(-50%) translateY(-50%) translateZ(0);
+           background: url('../img/thrust/circle.svg') no-repeat center;
+       }
+   }
+
+   .radius-engine-1-container {
+       position: absolute;
+       top:38%;
+       left:39%;
+   }
+   .radius-engine-2-container {
+       position: absolute;
+       top:38%;
+       right:17%;
+   }
+   .radius-engine-3-container {
+       position: absolute;
+       bottom:18%;
+       left:39%;
+   }
+   .radius-engine-4-container {
+       position: absolute;
+       bottom:18%;
+       right:17%;
+   }
+
+   &.focus-right {
+
+      .cadran {
+         background: url('../img/thrust/cadran.svg') no-repeat center;
+         background-size: 229% 230%;
+         pointer-events: auto;
+      }
+      .thrust-bottom-btn, .thrust-top-btn {
+          pointer-events: auto;
+          cursor: pointer;
+      }
+
+      .needle-engine-1, .needle-engine-2, .needle-engine-3, .needle-engine-4 {
+          &.on {
+            width: $heightNeedleFocus;
+            height: $heightNeedleFocus;
+        }
+      }
+
+      .needle-engine-1 {
+         top: $positionTopNeedle1Focus;
+         left: $positionLeftNeedle1Focus;
+      }
+
+      .needle-engine-2 {
+         top: $positionTopNeedle2Focus;
+         left: $positionLeftNeedle2Focus;
+      }
+
+      .needle-engine-3 {
+         top: $positionTopNeedle3Focus;
+         left: $positionLeftNeedle3Focus;
+      }
+
+      .needle-engine-4 {
+         top: $positionTopNeedle4Focus;
+         left: $positionLeftNeedle4Focus;
+      }
+
+      .shortcut-thrust{
+        @include centerItemX(50%);
+        top:-5%;
+        @include fontUse($fontFamilly, 18px, $fontWeight);
+        text-align: center;
+        padding: 3.5% 1%;
+        background-color: white;
+        z-index: 20;
+        display: none;
+        &.on{
+          display: block;
+        }
+      }
+   }
+}

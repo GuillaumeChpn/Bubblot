@@ -1,0 +1,27 @@
+
+! Flag si separer graphes cam
+giCamFlagSepGraph                        1
+
+! Cam num
+gpiCamNum[0]                             1
+gpiCamNum[1]                             1
+
+! Flag si sync cam
+giCamFlagSync                            1
+
+! Flag si aff horiz
+giDispScreenHoriz                        1
+
+! Diam cercle sur image [0,x], 0=off
+giTexCircleDiam                          1500
+
+! Scaling texture ]0,1] : 1->90 degres 1/2 sphere
+gdTexSphAngleScale                       0.863837598531476
+
+! Correction camera : Position objet
+obj_corrcam_latitude                     1.6
+obj_corrcam_longtitude                   -4.49999999999997
+obj_corrcam_twist                        0.7
+
+! Persp. angle (1/2 angle)
+perspAngle                               40

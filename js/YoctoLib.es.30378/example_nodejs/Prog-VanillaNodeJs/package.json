@@ -1,0 +1,9 @@
+{
+  "name": "prog-vanillanodejs",
+  "author": "Yoctopuce",
+  "description": "Yoctopuce Prog-VanillaNodeJs example",
+  "dependencies": {
+    "ws": "^1.0.1",
+    "yoctolib-es2017": "^1.10.30378"
+  }
+}

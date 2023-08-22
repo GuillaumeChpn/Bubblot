@@ -1,0 +1,20 @@
+<!-- Bubblot ALERT -->
+<bubblot-alert security="notifData.bubblotSecurity" twist-left="notifData.bubblotTwistLeft" twist-right="notifData.bubblotTwistRight" audio="notifData.audioBubblot"></bubblot-alert>
+
+<!-- Pump ALERT -->
+<pump-alert security="notifData.pumpSecurity" audio="notifData.audioPump"></pump-alert>
+
+<!-- Winder ALERT -->
+<winder-alert pressure1="notifData.winderPressure1" reset1="notifData.winderReset1" pressure2="notifData.winderPressure2" reset2="notifData.winderReset2" 
+            pressure3="notifData.winderPressure3" reset3="notifData.winderReset3" pressure4="notifData.winderPressure4" reset4="notifData.winderReset4"
+            audio="notifData.audioWinder"></winder-alert>
+
+<!-- Shortcuts HELP -->
+<p class="shortcut-bubblot" ng-class="{on:notifData.help}">Alt+1</p>
+<p class="shortcut-pump" ng-class="{on:notifData.help}">Alt+2</p>
+<p class="shortcut-winder" ng-class="{on:notifData.help}">Alt+3</p>
+<p class="shortcut-map" ng-class="{on:notifData.help}">Alt+4</p>
+
+<!-- Rec data BUTTON -->
+<div class="btn-rec-data" ng-class="{on:notifData.recData}" ng-click="notifData.recData=!notifData.recData">Rec</div>
+

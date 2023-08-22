@@ -1,0 +1,32 @@
+<div class="cadrans-winder-container winder-control middle">
+    <div class="cadran"></div>
+    <div class="progress-pie"></div>
+    <strong><div class="main-control-container">
+        <div class="main-control" style="top: {{(0.5-mainControl)*100}}%" drag-main-winder position="mainControl">
+            <div class="control-container one" ng-class="{off:railMode}">
+                <div class="bar"></div>
+                <div class="winder-control" style="top: {{(0.5-winderControl1)*100}}%" drag-winder position="winderControl1">1</div>
+            </div>
+            <div class="control-container two" ng-class="{off:railMode}">
+                <div class="bar"></div>
+                <div class="winder-control" style="top: {{(0.5-winderControl2)*100}}%" drag-winder position="winderControl2">2</div>
+            </div>
+            <div class="control-container three" ng-class="{off:railMode}">
+                <div class="bar"></div>
+                <div class="winder-control" style="top: {{(0.5-winderControl3)*100}}%" drag-winder position="winderControl3">3</div>
+            </div>
+            <div class="control-container four" ng-class="{off:railMode}">
+                <div class="bar"></div>
+                <div class="winder-control" style="top: {{(0.5-winderControl4)*100}}%" drag-winder position="winderControl4">4</div>
+            </div>
+        </div>
+    </div></strong>
+    <div class="btn-stop-winder" ng-click="stop()">Stop</div>
+    <div class="btn-reset-winder" ng-click="reset()">Reset</div>
+    <div class="btn-rail" ng-class="{on:!railMode}" ng-click="rail()">Rail</div>
+    <div class="btn-rail" ng-class="{on:railMode}" ng-click="rail()">Winder</div>
+    <div class="shortcut-winder-main" ng-class="{on:help}">Scroll</div>
+    <div class="shortcut-winder1" ng-class="{on:help}">1+scroll</div>
+    <div class="shortcut-winder-stop" ng-class="{on:help}">S</div>
+    <div class="shortcut-winder-reset" ng-class="{on:help}">R</div>
+</div>

@@ -1,0 +1,22 @@
+<!-- HORIZON -->
+<horizon ng-click="focusLeft(0)" ng-class="leftData.positionClass[0]" pitch="leftData.horizonPitch" roll="leftData.horizonRoll"
+    twist-left="leftData.twistLeft" twist-right="leftData.twistRight"></horizon>
+
+<!-- 3D View -->
+<three-d-view angle="leftData.threeDAngle" help="leftData.help" ng-click="focusLeft(1)" ng-class="leftData.positionClass[1]"
+    focus-index="leftData.focusLeftIndex"></three-d-view>
+
+<!-- Nose -->
+<noze magnetism="leftData.magnetism" magnetism-xaxis="leftData.magnetismXaxis" magnetism-yaxis="leftData.magnetismYaxis" turbidity-red="leftData.turbidityRed" turbidity-green="leftData.turbidityGreen"
+    turbidity-blue="leftData.turbidityBlue" circle-size="nozeSize" circle-thickness="nozeThickness"
+    ng-click="focusLeft(2, setNozeSize)" ng-class="leftData.positionClass[2]"></noze>
+
+<!-- Graphique -->
+<graph compute-va="leftData.computeVa" data="leftData.vaData" ng-click="focusLeft(3)" ng-class="leftData.positionClass[3]"></graph>
+
+<!-- Storage -->
+<storage pump-on="leftData.pumpOn" pump-power="leftData.pumpPower" filled-ok="leftData.filledOk" ng-click="focusLeft(4, setStorageSize)" ng-class="leftData.positionClass[4]"
+        circle-size="storageSize" circle-thickness="storageThickness" focus-index="leftData.focusLeftIndex"></storage>
+
+<!-- Message -->
+<message display-list-emo="leftData.displayListEmo"></message>

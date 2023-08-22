@@ -1,0 +1,11 @@
+@import "mixins";
+// Cadran map data
+.map-map {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 94%;
+    width: 75%;
+    background: url('../img/fondMapDemo.jpg') no-repeat center;
+    background-size: 100% 100%;
+}

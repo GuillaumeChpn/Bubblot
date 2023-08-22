@@ -1,0 +1,89 @@
+@import "mixins";
+// Cadran map panel
+.cadran-message {
+    position:absolute;
+    top:0.5%;
+    left:11.5%;
+    width:10%;
+    form{
+        .message-title{
+            text-align: center;
+            @include fontUse($fontFamilly, 103%, $fontWeight);
+            color: $activeColor;
+        }
+        .message-table{
+            margin: auto;
+        }
+        input{
+            @include fontUse($fontFamilly, 103%, $fontWeight);
+            width:100%;
+        }
+        .predefined-messages{
+            background: url('../img/message/happy.png') no-repeat center; 
+            background-size:100%;
+            cursor: pointer;
+            width:100%;
+            padding-top: 100%;
+        }
+            .emoticons-list{
+                width:100%;
+                background-color: gray;
+                margin: auto;
+                border: 2px solid black;
+                border-radius: 5px;
+                .message-cell{
+                    width:100%;
+                    padding-top: 100%;
+                    cursor: pointer;
+                    &.happy{
+                        background: url('../img/message/happy.png') no-repeat center; 
+                        background-size:100%;
+                    }
+                    &.nice{
+                        background: url('../img/message/nice.png') no-repeat center; 
+                        background-size:100%;
+                    }
+                    &.sad{
+                        background: url('../img/message/sad.png') no-repeat center; 
+                        background-size:100%;
+                    }
+                    &.minion-face{
+                        background: url('../img/message/minionFace.png') no-repeat center; 
+                        background-size:100%;
+                    }
+                    &.minion-glass{
+                        background: url('../img/message/minionGlass.png') no-repeat center; 
+                        background-size:100%;
+                    }
+                    &.minion-glass2{
+                        background: url('../img/message/minionGlass2.png') no-repeat center; 
+                        background-size:100%;
+                    }
+                    &.pacman{
+                        background: url('../img/message/pacman.gif') no-repeat center; 
+                        background-size:100%;
+                    }
+                    &.hublot{
+                        background: url('../img/message/hublot.gif') no-repeat center; 
+                        background-size:100%;
+                    }
+                    &.shark{
+                        background: url('../img/message/shark.gif') no-repeat center; 
+                        background-size:100%;
+                    }
+                    &.minion{
+                        background: url('../img/message/minion.gif') no-repeat center; 
+                        background-size:100%;
+                    }
+                    &.minion2{
+                        background: url('../img/message/minion2.gif') no-repeat center; 
+                        background-size:100%;
+                    }
+                    &.bubble{
+                        background: url('../img/message/bubble.gif') no-repeat center; 
+                        background-size:100%;
+                    }
+                }
+            }
+    }   
+}

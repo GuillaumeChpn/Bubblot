@@ -1,0 +1,9 @@
+<div class="cadrans-container pump-power">
+    <div class="cadran" drag-circle angle-min="225" range="270" position="thrust"></div>
+    <div class="progress-pie"></div>
+    <div class="circle" id="circle-thrust"></div>
+    <div class="needle" style="transform: rotate({{needleAngle}}deg);"></div>    
+    <div class="arrow" ng-class="{extract:(needleAngle==180)}"></div>
+    <circle-progress value="thrust" circle-size="circleSize" circle-thickness="circleThickness" circle-ratio="0.75" circle-color=0/>
+    <p class="shortcut-pump-power" ng-class="{on:help}">Scroll</p>
+</div>

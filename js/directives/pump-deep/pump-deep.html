@@ -1,0 +1,14 @@
+<div id="deep" class="cadrans-container deep">
+    <div class="cadran"></div>
+    <div class="progress-pie"></div>
+    <div class="security-progressbar">
+        <div class="progress-bar" id="progress-bar-spot-security"></div>
+        <div class="indicateur" style="background: tomato; top: {{100-security}}%;"></div>
+    </div>
+    <div class="ballast-progressbar">
+        <div class="progress-bar" id="progress-bar-spot-ballast"></div>
+        <div class="indicateur" style="background: yellow; top: {{100-ballastState}}%;"></div>
+    </div>
+    <div class="led-security" ng-class="{error:securityAlert}">S </div>
+    <circle-progress value="depth" circle-size="circleSize" circle-thickness="circleThickness" circle-ratio="0.75" circle-color=0/>
+</div>

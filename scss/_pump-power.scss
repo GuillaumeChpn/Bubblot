@@ -1,0 +1,68 @@
+@import "mixins";
+// Cadran pump-power
+.pump-power {
+
+   .cadran {
+      background: url('../img/thrust/cadran-small.svg') no-repeat center;
+      background-size: 229% 230%;
+      pointer-events: none;
+   }
+   .progress-pie {
+      width: 100%;
+      height: 100%;
+      background-color: $colorProgressPie;
+      @include centerItem($centerValue);
+      z-index: 2;
+   }
+   .circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+      transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+   }
+   .needle{
+           position: absolute;
+            left: 45%;
+            top: 32%;
+            width:10%;
+            height:20%;
+            background: url('../img/PumpPowerControl/PumpPowerControlHand.svg') no-repeat center;
+            z-index: 12;
+            transform-origin: 50% 50%;
+    }
+    .arrow{
+       @include centerItemX(50%);
+        top: 60%;
+        width:10%;
+        height:24%;
+        z-index: 13;
+        background: url('../img/PumpPowerControl/PumpPowerControlGreenArrow.svg') no-repeat center;
+        &.extract {
+            background: url('../img/PumpPowerControl/PumpPowerControlRedArrow.svg') no-repeat center;
+        }
+   }
+
+   &.focus-right {
+
+      .cadran {
+        background: url('../img/thrust/cadran.svg') no-repeat center;
+         background-size: 229% 230%;
+         pointer-events: auto;
+      }
+      .shortcut-pump-power{
+        @include centerItemX(50%);
+        top:-5%;
+        @include fontUse($fontFamilly, 18px, $fontWeight);
+        text-align: center;
+        padding: 3.5% 1%;
+        background-color: white;
+        z-index: 20;
+        display: none;
+        &.on{
+          display: block;
+        }
+      }
+   }    
+
+}

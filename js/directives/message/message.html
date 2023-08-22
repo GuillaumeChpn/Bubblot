@@ -1,0 +1,61 @@
+<div id="message" class="cadran-message">
+    <form>
+        <div class="message-title">MESSAGE FOR DIVERS</div>
+        <table class="message-table">
+            <tr>
+                <td style="width:85%;">
+                    <input class="message-text" type="text">
+                </td>
+                <td style="width:15%;">
+                    <div class="predefined-messages" ng-click="displayListEmo=!displayListEmo"></div>
+                </td>
+            </tr>
+        </table>
+        <table class="emoticons-list">
+            <tr>
+                <td>
+                    <div class="message-cell happy" ng-click="printHappy()"></div>
+                </td>
+                <td>
+                    <div class="message-cell nice" ng-click="printNice()"></div>
+                </td>
+                <td>
+                    <div class="message-cell sad" ng-click="printSad()"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="message-cell minion-face" ng-click="printMinionFace()"></div>
+                </td>
+                <td>
+                    <div class="message-cell minion-glass" ng-click="printMinionGlass()"></div>
+                </td>
+                <td>
+                    <div class="message-cell minion-glass2" ng-click="printMinionGlass2()"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="message-cell pacman" ng-click="printPacman()"></div>
+                </td>
+                <td>
+                    <div class="message-cell hublot" ng-click="printHublot()"></div>
+                </td>
+                <td>
+                    <div class="message-cell bubble" ng-click="printBubble()"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="message-cell minion" ng-click="printMinion()"></div>
+                </td>
+                <td>
+                    <div class="message-cell minion2" ng-click="printMinion2()"></div>
+                </td>
+                <td>
+                    <div class="message-cell shark" ng-click="printShark()"></div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

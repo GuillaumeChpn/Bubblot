@@ -1,0 +1,177 @@
+@import "mixins";
+// Cadran map panel
+.map-panel {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 94%;
+    width: 25%;
+    background-size: 100% 100%;
+        legend{
+            @include fontUse($fontFamilly, 26px, $fontWeight);
+            margin:0 auto;
+        }
+        fieldset{
+            color: white;
+            @include fontUse($fontFamilly, 19px, $fontWeight);
+        }
+        input{
+            @include fontUse($fontFamilly, 22px, $fontWeight);
+        }
+        output{
+            @include fontUse($fontFamilly, 22px, $fontWeight);
+        }
+        input[type=date]{
+            width: 38%;
+        }
+        input[type=time]{
+            width: 22%;
+        }
+        input[type=submit]{
+            @include centerItemX(50%);
+        }
+        input[type=date]::-webkit-inner-spin-button { 
+            -webkit-appearance: none; 
+            -moz-appearance: none;
+            margin: 0; 
+        }
+        .btn-path, .btn-vi, .btn-rec{
+            color: white;
+            text-align: center;
+            border: 3px solid white;
+            background-color: #798081;
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            z-index: 10;
+            cursor: pointer;
+            @include border(8px);
+        }
+        .btn-play{
+            position: absolute;
+            color: white;
+            text-align: center;
+            border: 3px solid white;
+            background-color: green;
+            margin-top: 10px;
+            z-index: 10;
+            cursor: pointer;
+            @include border(8px);
+            @include fontUse($fontFamilly, 30px, $fontWeight);
+            padding: 3px 6px;
+        }
+        .btn-play{
+            &.on{
+                background-color: red;
+            }
+        }
+        .btn-load{
+            position: absolute;
+            color: white;
+            text-align: center;
+            border: 3px solid white;
+            background-color: #798081;
+            margin-top: 10px;
+            z-index: 10;
+            cursor: pointer;
+            @include border(8px);
+            @include fontUse($fontFamilly, 30px, $fontWeight);
+            padding: 3px 6px;
+        }
+        .btn-path{
+            &.on{
+                background-color: green;
+            }
+        }
+        .btn-vi{
+            &.on{
+                background-color: green;
+            }
+        }
+        .btn-rec{
+            &.on{
+                background-color: green;
+            }
+        }
+        .btn-fe, .btn-pb, .btn-cu, .btn-sn{
+            color: white;
+            text-align: center;
+            border: 3px solid white;
+            background-color: none;
+            z-index: 10;
+            width: 100%;
+            height: 111%;
+            line-height: 2.7;
+            cursor: pointer;
+            @include border(8px);
+            @include fontUse("arial black", 11px, $fontWeight);
+        }
+        .btn-fe{
+            &.on{
+                background-color: red;
+            }
+        }
+        .btn-pb{
+            &.on{
+                background-color: #798081;
+            }
+        }
+        .btn-cu{
+            &.on{
+                background-color: #B36700;
+            }
+        }
+        .btn-sn{
+            &.on{
+                background-color: #CECECE;
+            }
+        }
+        .btn-magnetism, .btn-turbidity{
+            color: white;
+            text-align: center;
+            border: 3px solid white;
+            background-color: #798081;
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            z-index: 10;
+            cursor: pointer;
+            @include border(8px);
+            &.on{
+                background-color: green;
+            }
+        }
+        .metal-vi{
+            position: absolute;
+            bottom: 10%;
+            font-family: "Arial black";
+            font-size: 14px;
+            color: red;
+            display: none;
+            &.on{
+                    display: block;
+                }
+            &.fe{
+                left: 42%;
+            }
+            &.pb{
+                left: 53%;
+            }
+            &.cu{
+                left: 68%;
+            }
+            &.sn{
+                left: 77%;
+            }
+        }
+        .display{
+            table
+        {
+            margin: auto;
+            td{
+                width: 75px;
+                height: 75px;
+            }
+        }
+    }
+    }

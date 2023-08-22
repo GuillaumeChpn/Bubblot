@@ -1,0 +1,8 @@
+<div id="view" class="cadrans-container view">
+    <div class="cadran"></div>
+    <div class="progress-pie"></div>
+    <div class="changement-vue" style="top: {{cursorPosition()}}%" drag-3d-view position="angle"></div>
+    <div class="lens left" style="transform: rotate({{angle}}deg)"></div>
+    <div class="lens right" style="transform: rotate({{-angle}}deg)"></div>
+    <p class="shortcut-view" ng-class="{on:help}">Scroll</p>
+</div>

@@ -1,0 +1,144 @@
+@import "mixins";
+// Cadran Metal
+
+.metal {
+
+   .cadran {
+      background: url('../img/metal/cadran.svg') no-repeat center;
+      background-size: 229% 230%;
+   }
+
+   .graph-container {
+      width: 100%;
+      height: 100%;
+      background: $radialColor;
+      .graph {
+         position:absolute;
+         left:13%;
+         top: 20%;
+         width: 67%;
+         height: 50%;
+         &.hide{
+             display:none;
+         }
+      }
+      .tank-va{
+        @include centerItemX($centerValue);
+        top:20%;
+        background-color: $secondColor;
+        width:55%;
+        height:45%;
+        @include border(20px);
+        border-style: solid;
+        border-width: 5px;
+        border-color: black;
+        &.hide{
+            display:none;
+        }
+        .water-va{
+            position: absolute;
+            right:0;
+            height:100%;
+            display:block;
+            //width:0%;
+            @include border(20px);
+            background-color: DeepSkyBlue;
+            &.in{
+                background-color: DeepSkyBlue;
+                animation: waterEvolution1 3s linear forwards, waterEvolution2 0.25s 3.5s linear forwards, 
+                            waterEvolution1 3s 4.25s linear forwards, waterEvolution2 0.25s 7.75s linear forwards,
+                            waterEvolution1 3s 8.5s linear forwards, waterEvolution2 0.25s 12s linear forwards,
+                            waterEvolution3 3s 12.75s linear forwards, waterEvolution5 3s 16.25s linear forwards,
+                            waterEvolution4 0.25s 22.25s linear forwards;
+                            
+            }
+        }
+      }
+   }
+
+   .btn-draw {
+      bottom: 14px;
+      padding: 3px 6px;
+      color: $activeColor;
+      text-transform: uppercase;
+      border: 1px solid $mainColor;
+      z-index: 10;
+      cursor: pointer;
+      @include border(3px);
+      @include fontUse($fontFamilly, 9px, $fontWeight);
+      @include centerItemX($centerValue);
+      pointer-events: none;
+   }
+
+   &.focus-left {
+      .btn-draw {
+         bottom: 27px;
+         font-size: 25px;
+         pointer-events: auto;
+         cursor: pointer;
+      }
+      .metal-name{
+        position: absolute;
+        top: 20%;
+        @include fontUse($fontFamilly, 15px, $fontWeight);
+        &.fe{
+            left: 37%;
+        }
+        &.pb{
+            left: 48%;
+        }
+        &.cu{
+            left: 63%;
+        }
+        &.sn{
+            left: 70%;
+        }
+      }
+   }
+}
+
+@keyframes waterEvolution1 {
+    from {
+       width: 0%;
+    }
+    to {
+       width: 100%;
+    }
+ }
+ @keyframes waterEvolution2 {
+    from {
+       width: 100%;
+    }
+    to {
+       width: 0%;
+    }
+ }
+ @keyframes waterEvolution3 {
+    from {
+       width: 0%;
+    }
+    to {
+       width: 100%;
+    }
+ }
+ @keyframes waterEvolution4 {
+    from {
+       width: 100%;
+    }
+    to {
+       width: 0%;
+    }
+ }
+ @keyframes waterEvolution5 {
+    0% {
+        background: DeepSkyBlue;
+      }
+      /* Adding a step in the middle */
+      50% {
+        background: blueviolet;
+      }
+      100% {
+        background: DeepSkyBlue;
+      }
+ }
+ 

@@ -1,0 +1,32 @@
+
+<!-- winder CONTROL -->
+<winder-control main-control="winderData.mainControl" winder-control1="winderData.winderControl1" winder-control2="winderData.winderControl2"
+                winder-control3="winderData.winderControl3" winder-control4="winderData.winderControl4" rail-mode="winderData.railMode" help="winderData.help"
+                rail-length="winderData.railLength"></winder-control>
+
+<!-- winder PANEL 1 -->
+<winder-panel1 winder-length="winderData.winderLength1" winder-speed="winderData.winderSpeed1" circle-size="panelSize" circle-thickness="panelThickness" 
+                pressure="winderData.pressure1" min-pressure="winderData.minPressure1" pressure-alert="winderData.pressureAlert1" reset="winderData.reset1" 
+                rail-mode="winderData.railMode" winder-alert="winderData.winderAlert1"></winder-panel1>
+
+<!-- winder PANEL 2 -->
+<winder-panel2 winder-length="winderData.winderLength2" winder-speed="winderData.winderSpeed2" circle-size="panelSize" circle-thickness="panelThickness" 
+                pressure="winderData.pressure2" min-pressure="winderData.minPressure2" pressure-alert="winderData.pressureAlert2" reset="winderData.reset2" 
+                rail-mode="winderData.railMode" winder-alert="winderData.winderAlert2"></winder-panel2>
+
+<!-- winder PANEL 3 -->
+<winder-panel3 winder-length="winderData.winderLength3" winder-speed="winderData.winderSpeed3" circle-size="panelSize" circle-thickness="panelThickness" 
+                pressure="winderData.pressure3" min-pressure="winderData.minPressure3" pressure-alert="winderData.pressureAlert3" reset="winderData.reset3" 
+                rail-mode="winderData.railMode" winder-alert="winderData.winderAlert3"></winder-panel3>
+
+<!-- winder PANEL 4 -->
+<winder-panel4 winder-length="winderData.winderLength4" winder-speed="winderData.winderSpeed4" circle-size="panelSize" circle-thickness="panelThickness" 
+                pressure="winderData.pressure4" min-pressure="winderData.minPressure4" pressure-alert="winderData.pressureAlert4" reset="winderData.reset4" 
+                rail-mode="winderData.railMode" winder-alert="winderData.winderAlert4"></winder-panel4>
+
+<!-- rail Counter -->
+<div class="rail-counter-container" ng-class="{on:winderData.railMode}">
+    <div class="rail-counter">0.0</div>
+</div>
+<div class="rail-warning" ng-class="{on:winderData.railAlert}"></div>
+

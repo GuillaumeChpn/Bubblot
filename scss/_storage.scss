@@ -1,0 +1,199 @@
+@import "mixins";
+// Cadran Storage
+
+$widthStorageContainer: 55%;
+$widthStorageContainerFocus: 50%;
+$positionYStorageContainer: 28px;
+$positionYStorageContainerFocus: 33%;
+$heightStorageContainer: 40px;
+
+$widhtBtnCleaner: 15px;
+$widhtBtnCleanerFocus: 50px;
+
+$widthCleanerContainer: 40%;
+$widthCleanerContainerFocus: 44%;
+$positionYCleanerContainer: 24%;
+$positionYCleanerContainerFocus: 85px;
+$heightCleanerContainer: 18.6%;
+$heightCleanerContainerFocus: 73px;
+
+$widthStorage: calc(100% / 5 - 8px);
+$heightStorage: 25px;
+$heightStorageFocus: 30px;
+$marginStorage: 5px;
+
+$bgProgressBar: rgb(191, 201, 148);
+
+.storage {
+
+   .cadran {
+      background: url('../img/storage/cadran3.svg') no-repeat center;
+      background-size: 229% 230%;
+   }
+   .progress-pie {
+    width: 100%;
+    height: 100%;
+    background-color: $colorProgressPie;
+    @include centerItem($centerValue);
+    z-index: 2;
+ }
+
+ .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+    &.reverse {
+       transform: translateX(-50%) translateY(-50%) rotate(223deg);
+    }
+ }
+
+   .cleaner-container {
+      top: $positionYCleanerContainer;
+      width: $widthCleanerContainer;
+      height: $heightCleanerContainer;
+      z-index: 10;
+      @include centerItemX($centerValue);
+      .btn-cleaner {
+         position: relative;
+         width: 31.1%;
+         height: 87.5%;
+         line-height: 24px;
+         text-align: center;
+         border: 3px solid $secondColor;
+         cursor: pointer;
+         float: left;
+         @include border(50%);
+         pointer-events: none;
+         @include fontUse($fontFamilly, 6px, 700);
+         &:hover {
+            background-color: darken($secondColor, 20%);
+            color: $mainColor;
+         }
+         &.on{
+            background-color: darken($secondColor, 20%);
+            color: $mainColor;
+         }
+      }
+   }
+
+   .storage-container {
+      bottom: $positionYStorageContainer;
+      width: $widthStorageContainer;
+      height: $heightStorageContainer;
+      padding-left: 9px;
+      z-index: 10;
+      @include centerItemX($centerValue);
+      .progress-bar-container {
+         position: absolute;
+         left: 8%;
+         right: 5%;
+         height: 2px;
+         bottom: 44px;
+         .progress-bar {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $secondColor;
+            &.inject{
+                animation: progressBar 27s linear forwards;
+            }
+         }
+      }
+      .storage {
+         position: relative;
+         float: left;
+         width: $widthStorage;
+         height: $heightStorage;
+         line-height: $heightStorage;
+         margin-right: $marginStorage;
+         background-color: #c3f900;
+         border: 1px solid rgb(74, 74, 74);
+         text-align: center;
+         @include border(3px);
+         @include fontUse($fontFamilly, 10px, $fontWeight);
+         &.filled{
+                background-color: $secondColor;
+        }
+         &:before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 2px;
+            height: 5px;
+            width: 2px;
+            background-color: $secondColor;
+         }
+         .storage-evolution {
+            position: absolute;
+            bottom: 0;
+            width: 100%;   
+            background-color: $secondColor; 
+            &.un {
+               animation: storageEvolution 5s linear 20s forwards;
+            }
+            &.deux {
+               animation: storageEvolution 5s linear 15s forwards;
+            }
+            &.trois {
+               animation: storageEvolution 5s linear 10s forwards;
+            }
+            &.quatre {
+               animation: storageEvolution 5s linear 5s forwards;
+            }
+            &.cinq {
+               animation: storageEvolution 5s linear forwards;
+            }
+         }
+      }
+   }
+
+   &.focus-left {
+      .storage-container {
+         bottom: $positionYStorageContainerFocus;
+         width: $widthCleanerContainerFocus;
+         .storage {
+            height: $heightStorageFocus;
+            line-height: $heightStorageFocus;
+         }
+         &:after {
+            top: -20px;
+         }
+      }
+      .progress-bar-container {
+         left: 5%;
+      }
+      .cleaner-container {
+         top: $positionYCleanerContainerFocus;
+         width: $widthCleanerContainerFocus;
+         height: $heightCleanerContainerFocus;
+         .btn-cleaner {
+            width: $widhtBtnCleanerFocus;
+            height: $widhtBtnCleanerFocus;
+            line-height: $widhtBtnCleanerFocus;
+            @include fontUse($fontFamilly, 14px, 700);
+            pointer-events: auto;
+            cursor: pointer;
+         }
+      }
+   }
+}
+
+@keyframes storageEvolution {
+   from {
+      height: 0%;
+   }
+   to {
+      height: 100%;
+   }
+}
+@keyframes progressBar {
+   from {
+      width: 100%;
+   }
+   to {
+      width: 0%;
+   }
+}

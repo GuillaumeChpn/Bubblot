@@ -1,0 +1,75 @@
+<!-- Map PANEL -->
+<div class="map-panel">
+        <form>
+            <fieldset>
+                <legend>Control panel</legend>
+                <div class="caleandar"></div>
+                <table cellspacing="20" class="display">
+                    <tr>
+                        <td>
+                            <div class="btn-path" ng-click="displayPath=!displayPath" ng-class="{on:displayPath}"><canvas style="height: 75; width: 75" ></canvas></div>
+                        </td>
+                        <td>
+                            <div class="btn-magnetism" ng-click="displayMagn=!displayMagn" ng-class="{on:displayMagn}"><canvas style="height: 75; width: 75" ></canvas></div>
+                        </td>
+                        <td>
+                            <div class="btn-rec" ng-click="displayMovie=!displayMovie" ng-class="{on:displayMovie}"><canvas style="height:75; width: 75" ></canvas></div>
+                        </td>
+                        <td>
+                            <div class="btn-turbidity" ng-click="displayTurbi=!displayTurbi" ng-class="{on:displayTurbi}"><canvas style="height: 75; width: 75" ></canvas></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            <div class="btn-vi" ng-click="displayVa=!displayVa" ng-class="{on:displayVa}"><canvas style="height: 75; width: 75" ></canvas></div>
+                        </td>
+                        <td>
+                        <table cellspacing="2">
+                            <tr>
+                                <td style="width:37px; height:37px;">
+                                    <div class="btn-fe" ng-click="displayFe=!displayFe" ng-class="{on:displayFe}">Fe</div>
+                                </td>
+                                    <td style="width:37px; height:37px;">
+                                        <div class="btn-pb" ng-click="displayPb=!displayPb" ng-class="{on:displayPb}" style="left: 17%">Pb</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:37px; height:37px;">
+                                        <div class="btn-cu" ng-click="displayCu=!displayCu" ng-class="{on:displayCu}" style="left: 30%">Cu</div>
+                                    </td>
+                                    <td style="width:37px; height:37px;">
+                                        <div class="btn-sn" ng-click="displaySn=!displaySn" ng-class="{on:displaySn}" style="left: 44%">Sn</div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Informations</legend>
+                <fieldset style="position:absolute;top:69%;right:3%;height:25%;width:45%">
+                    <legend>{{graphName}}</legend>
+                    <div style="height: 80%; width: 93%;position:absolute;left:2%;top:15%;">
+                        <canvas style="height:100;width:110;"></canvas>
+                        <div class="metal-vi fe" ng-class="{on:vaCursor}">Fe</div>
+                        <div class="metal-vi pb" ng-class="{on:vaCursor}">Pb</div>
+                        <div class="metal-vi cu" ng-class="{on:vaCursor}">Cu</div>
+                        <div class="metal-vi sn" ng-class="{on:vaCursor}">Sn</div>
+                    </div>
+                </fieldset>
+                Bubblot: {{bubblotCursor}}<br><br>
+                Day: {{dateCursor[2]}}/{{dateCursor[1]}}/{{dateCursor[0]}}<br><br>
+                Time: {{dateCursor[3]}}:{{dateCursor[4]}}<br><br>
+                Lat.: {{(latitudeCursor/30).toFixed(3)}}°<br><br>
+                Long.: {{(longitudeCursor/30).toFixed(3)}}°<br><br>
+                Depth: {{depthCursor}} m<br><br>
+                Temp.: {{tempCursor}} °C<br>
+            </fieldset>
+        </form>
+</div>

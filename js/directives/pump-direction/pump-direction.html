@@ -1,0 +1,23 @@
+<div id="direction" class="cadrans-container direction">
+    <div class="cadran"></div>
+    <div class="north-container">
+        <div class="north" style="transform: rotate({{angleNorth}}deg)"></div>
+    </div>
+    <div class="zone-stockage" style="transform: rotate({{angleStorage}}deg)"></div>
+    <div class="bubblot b1">1</div>
+    <div class="bubblot-direction b1" style="transform: rotate({{angleB1}}deg)">
+        <div class="arrow-direction"></div>
+    </div>
+    <div class="bubblot b2">2</div>
+    <div class="bubblot-direction b2" style="transform: rotate({{angleB2}}deg)">
+        <div class="arrow-direction"></div>
+    </div>
+    <div class="bubblot b3">3</div>
+    <div class="bubblot-direction b3" style="transform: rotate({{angleB3}}deg)">
+        <div class="arrow-direction"></div>
+    </div>
+    <div class="btn-nord" style="cursor: pointer" drag-direction position="angleNorth">N</div>
+    <div class="btn-stockage" style="cursor: pointer" drag-direction position="angleStorage">S</div>
+    <p class="shortcut-direction north" ng-class="{on:help}">(Ctrl+)scroll</p>
+    <p class="shortcut-direction storage" ng-class="{on:help}">(Ctrl+)scroll</p>
+</div>
