@@ -1,0 +1,24 @@
+<div id="thrust" class="cadrans-container thrust">
+    <div class="cadran" drag-circle angle-min="225" range="270" position="thrust"></div>
+    <div class="progress-pie"></div>
+    <div class="thrust-top-btn" ng-class="{on:thrustTopSwitchOn}" ng-click="thrustTopSwitchOn=!thrustTopSwitchOn"></div>
+    <div class="thrust-bottom-btn" ng-class="{on:thrustBottomSwitchOn}" ng-click="thrustBottomSwitchOn=!thrustBottomSwitchOn"></div>
+    <div class="needle-engine-1" ng-class="{on:thrustTopSwitchOn}" style="transform: rotate({{90-engine1Angle}}deg);"></div>
+    <div class="needle-engine-2" ng-class="{on:thrustTopSwitchOn}" style="transform: rotate({{90-engine2Angle}}deg);"></div>
+    <div class="needle-engine-3" ng-class="{on:thrustBottomSwitchOn}" style="transform: rotate({{90-engine3Angle}}deg);"></div>
+    <div class="needle-engine-4" ng-class="{on:thrustBottomSwitchOn}" style="transform: rotate({{90-engine4Angle}}deg);"></div>
+    <div class="radius-engine-1-container" ng-class="{on:thrustTopSwitchOn}">
+        <div class="radius" style="width:{{engine1Radius}}%; height:{{engine1Radius}}%;"></div>
+    </div>
+    <div class="radius-engine-2-container" ng-class="{on:thrustTopSwitchOn}">
+        <div class="radius" style="width:{{engine2Radius}}%; height:{{engine2Radius}}%;"></div>
+    </div>
+    <div class="radius-engine-3-container" ng-class="{on:thrustBottomSwitchOn}">
+        <div class="radius" style="width:{{engine3Radius}}%; height:{{engine3Radius}}%;"></div>
+    </div>
+    <div class="radius-engine-4-container" ng-class="{on:thrustBottomSwitchOn}">
+        <div class="radius" style="width:{{engine4Radius}}%; height:{{engine4Radius}}%;"></div>
+    </div>
+    <circle-progress value="thrust" circle-size="circleSize" circle-thickness="circleThickness" circle-ratio="0.75" circle-color=0/>
+    <p class="shortcut-thrust" ng-class="{on:help}">Scroll</p>
+</div>

@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg" id="svg" width="100%" height="100%" viewBox="0 0 21.6601 33.6674" style=" fill:none; fill-rule:evenodd; stroke-linecap:round; stroke-linejoin:round; stroke:#ffff00; stroke-width:0.2;">
+<desc>Twist_Right</desc>
+<rect x="-11.2225" y="-11.2225" width="44.1051" height="56.1123" color-rendering="optimizeSpeed" style=" fill:none; stroke:none; fill-opacity:100;" />
+<linearGradient id="grd2" spreadMethod="reflect" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="-0.5" y2="3.82857e-016">
+<stop offset="0" style="stop-color:#ff0000"/>
+<stop offset="1" style="stop-color:#ff7b7b"/>
+</linearGradient>
+<path d="M0.682445,32.3524A29.5,29.5 0 0,0 9.88998,27.6028 L9.95364,27.5541L10.015,27.6056
+A30.6,30.6 0 0,0 10.6493,28.1237 L10.7491,28.203L10.6483,28.281A30.5,30.5 0 0,1 0.9777,33.3078 
+L0.882158,33.3373L0.586903,32.3819L0.682445,32.3524M10.9082,26.7884L11.0008,26.8646
+A29.4,29.4 0 0,0 11.6393,27.3756 L11.7036,27.4256L11.7656,27.3727A30.5,30.5 0 0,0 20.7303,14.3279 
+A10.5,10.5 0 1,0 0.929815,14.3279 A30.5,30.5 0 0,0 17.7673,32.2416 L17.4544,33.254
+L21.0531,32.9092L18.3752,30.2746L18.0641,31.281A29.5,29.5 0 0,1 1.8727,13.9948 A9.5,9.5 0 1,1 19.7874,13.9948 
+A29.5,29.5 0 0,1 10.9998,26.711 L10.9082,26.7884" style="fill:url(#grd2); stroke:none;" />
+</svg>

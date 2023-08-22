@@ -1,0 +1,181 @@
+@import "mixins";
+// Cadran winder control
+.winder-control {
+   .cadran {
+      background: url('../img/winderControl/cadran2.svg') no-repeat center;
+      background-size: 229% 230%;
+   }
+   .progress-pie {
+      width: 100%;
+      height: 100%;
+      background: $radialColor;
+      @include centerItem($centerValue);
+      z-index: 2;
+   }
+   .main-control-container{
+       width: 100%;
+       height: 56%;
+       @include centerItemX(50%);
+       top: 8%;
+       z-index: 11;
+       .main-control{
+            width: 70%;
+            height: 15%;
+            @include centerItemX(50%);
+            @include border(10px);
+            background: darkgray;
+            cursor: pointer;
+            .control-container{
+                position: absolute;
+                width: 15%;
+                height: 150%;
+                @include centerItemY(50%);
+                cursor: auto;
+                display: block;
+                &.off{
+                    display: none;
+                }
+                &.one{
+                    left: 3%;
+                }
+                &.two{
+                    left: 20%;
+                }
+                &.three{
+                    right: 20%;
+                }
+                &.four{
+                    right: 3%;
+                }
+                .bar{
+                    position: absolute;
+                    width: 15%;
+                    height: 100%;
+                    @include centerItem(50%);
+                    background: black;
+                    z-index: 1;
+                }   
+                .winder-control{
+                    position: absolute;
+                    left: 50%;
+                    -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0);
+                    -moz-transform: translateX(-50%) translateY(-50%) translateZ(0);
+                    -ms-transform: translateX(-50%) translateY(-50%) translateZ(0);
+                    -o-transform: translateX(-50%) translateY(-50%) translateZ(0);
+                    transform: translateX(-50%) translateY(-50%) translateZ(0); 
+                    width: 100%;
+                    height: 70%;
+                    @include border(10px);
+                    background: gray;
+                    cursor: pointer;
+                    z-index: 2;
+                    text-align: center;
+                    font-size: 140%;
+                }
+            }
+       }
+   }
+   .btn-stop-winder{
+        position: absolute;
+        left: 15%;
+        bottom: 12px;
+        padding: 3px 6px;
+        width: 15%;
+        color: orangered;
+        text-transform: uppercase;
+        border: 2px solid orangered;
+        text-align:center;
+        z-index: 12;
+        cursor: pointer;
+        @include border(3px);
+        @include fontUse($fontFamilly, 12px, bolder);
+   }
+   .btn-reset-winder{
+       position: absolute;
+        right: 15%;
+        bottom: 12px;
+        padding: 3px 6px;
+        width: 15%;
+        color:gray;
+        text-transform: uppercase;
+        border: 2px solid gray;
+        text-align:center;
+        z-index: 12;
+        cursor: pointer;
+        @include border(3px);
+        @include fontUse($fontFamilly, 12px, bolder);
+   }
+   .btn-rail{
+        @include centerItemX(50%);
+        bottom: 12px;
+        padding: 3px 6px;
+        width: 15%;
+        color: $mainColor;
+        text-align:center;
+        text-transform: uppercase;
+        border: 2px solid #dcffab;
+        z-index: 12;
+        cursor: pointer;
+        @include border(3px);
+        @include fontUse($fontFamilly, 12px, bolder);
+        display: none;
+        &.on{
+            display: block;
+        }
+   }
+   .shortcut-winder-main{
+        @include centerItemX(50%);
+        top: 34%;
+        @include fontUse($fontFamilly, 18px, $fontWeight);
+        text-align: center;
+        padding: 3.5% 1%;
+        background-color: white;
+        z-index: 20;
+        display: none;
+        &.on{
+            display: block;
+        }
+      }
+      .shortcut-winder1{
+        position: absolute;
+        top: 20%;
+        left: 11%;
+        @include fontUse($fontFamilly, 18px, $fontWeight);
+        text-align: center;
+        padding: 3.5% 1%;
+        background-color: white;
+        z-index: 20;
+        display: none;
+        &.on{
+            display: block;
+        }
+      }
+      .shortcut-winder-stop{
+        position: absolute;
+        bottom: 10%;
+        left: 29%;
+        @include fontUse($fontFamilly, 18px, $fontWeight);
+        text-align: center;
+        padding: 3.5% 1%;
+        background-color: white;
+        z-index: 20;
+        display: none;
+        &.on{
+            display: block;
+        }
+      }
+      .shortcut-winder-reset{
+        position: absolute;
+        bottom: 10%;
+        right: 10%;
+        @include fontUse($fontFamilly, 18px, $fontWeight);
+        text-align: center;
+        padding: 3.5% 1%;
+        background-color: white;
+        z-index: 20;
+        display: none;
+        &.on{
+            display: block;
+        }
+      }
+}

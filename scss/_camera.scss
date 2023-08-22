@@ -1,0 +1,120 @@
+@import "mixins";
+// Cadran Camera
+
+$heightBtnRecSmall: 23px;
+$heightBtnSmall: 14px;
+$positionYBtnRecSmall: 13px;
+$positionYBtnSmall: 18px;
+$positionXBtnSmall: 42px;
+
+.camera {
+
+   .cadran {
+      background: url('../img/camera/cadran.svg') no-repeat center;
+      background-size: 229% 230%;
+   }
+
+   .canvasCamera{
+     z-index:0;
+     width:100%;
+     height: 100%;
+    .cameraGear{
+      width: 130%;
+      height:80%;
+      z-index: 0;
+    }
+   }
+
+   .red-circle{
+     @include centerItem($centerValue);
+     width: 90%;
+     height:90%;
+     z-index: 10;
+     @include border(50%);
+     &.on{
+       border: 2px solid red;
+     }
+   }
+
+   .green-circle{
+     @include centerItem($centerValue);
+     width: 90%;
+     height:90%;
+     z-index: 10;
+     @include border(50%);
+     &.on{
+       border: 2px solid #c3f900;
+     }
+   }
+
+   .btn-rec, .btn-share, .btn-play {
+      width: 10%;
+      height: 10%;
+      cursor: pointer;
+      z-index: 10;
+      pointer-events: none;
+   }
+
+   .btn-rec {
+     background-size: 100%;
+     bottom: 10%;
+      background: url('../img/camera/record.svg') no-repeat center;
+      @include centerItemX($centerValue);
+      &.on{
+        animation: recordOn 2s infinite;
+      }
+   }
+
+   .btn-share {
+     background-size: 100%;
+     bottom: 11%;
+      position: absolute;
+      left: 30%;
+      background: url('../img/camera/share.svg') no-repeat center;
+   }
+
+   .btn-play {
+     background-size: 100%;
+     bottom: 10%;
+      position: absolute;
+      right: 30%;
+      background: url('../img/camera/play1.svg') no-repeat center;
+      &.pause{
+        background: url('../img/camera/pause.svg') no-repeat center;
+      }
+   }
+
+   &.focus-right{
+     .red-circle{
+      &.on{
+        border: 4px solid red;
+      }
+    }
+    .green-circle{
+      &.on{
+        border: 4px solid #c3f900;;
+      }
+    }
+    .btn-rec, .btn-share, .btn-play {
+      pointer-events: auto;
+      cursor: pointer;
+   }
+   }
+
+}
+
+// ANIMATION
+@keyframes recordOn {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+     opacity: 0;
+ }
+}

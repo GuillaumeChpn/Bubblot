@@ -1,0 +1,12 @@
+<div id="graph" class="cadrans-container metal ">
+    <div class="cadran"></div>
+    <div class="graph-container">
+        <div class="graph" ng-class="{hide:computeVa}">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="tank-va" ng-class="{hide:!computeVa}">
+            <div class="water-va"  ng-class="{in:computeVa}"></div>
+        </div>
+    </div>
+    <div class="btn-draw" ng-click="computeVa=true">V-A</div>
+</div>

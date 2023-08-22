@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="194 -293 595.3 841.9" style="enable-background:new 194 -293 595.3 841.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{display:inline;}
+	.st2{fill:url(#SVGID_1_);}
+	.st3{fill:none;stroke:#2D2D2D;stroke-width:2;stroke-miterlimit:10;}
+	.st4{fill:#212121;}
+	.st5{font-family:'Arial'; font-weight:bold;}
+	.st6{font-size:26px;}
+	.st7{font-size:19px;}
+	.st8{fill:#FFFFFF;}
+	.st9{fill:#353535;}
+	.st10{fill:#1E1E1E;}
+	.st11{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+	.st12{opacity:0.6;fill:#515151;}
+	.st13{fill:none;stroke:#333333;stroke-width:5;stroke-miterlimit:10;}
+	.st14{fill:none;stroke:#333333;stroke-width:2;stroke-miterlimit:10;}
+	.st15{fill:none;stroke:#282828;stroke-miterlimit:10;}
+	.st16{fill:#282828;}
+</style>
+<g id="Calque_1" class="st0">
+	<g id="Calque_14" class="st1">
+		
+			<radialGradient id="SVGID_1_" cx="491.15" cy="131.9" r="169.6" gradientTransform="matrix(1 0 0 1 0 -3.9)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0" style="stop-color:#DCFFAB"/>
+			<stop  offset="1" style="stop-color:#B7D685"/>
+		</radialGradient>
+		<circle class="st2" cx="491.1" cy="128" r="169.6"/>
+	</g>
+	<g id="regle" class="st1">
+		<line class="st3" x1="460.6" y1="128" x2="460.6" y2="117.6"/>
+		<line class="st3" x1="430.6" y1="128" x2="430.6" y2="117.6"/>
+		<line class="st3" x1="400.6" y1="128" x2="400.6" y2="117.6"/>
+		<line class="st3" x1="370.6" y1="128" x2="370.6" y2="117.6"/>
+		<line class="st3" x1="610.6" y1="128" x2="610.6" y2="117.6"/>
+		<line class="st3" x1="580.6" y1="128" x2="580.6" y2="117.6"/>
+		<line class="st3" x1="550.6" y1="128" x2="550.6" y2="117.6"/>
+		<line class="st3" x1="520.6" y1="128" x2="520.6" y2="117.6"/>
+	</g>
+	<g id="indicateurs" class="st1">
+		<text transform="matrix(1 0 0 1 481.1918 -14.6335)" class="st4 st5 st6">N</text>
+		<text transform="matrix(1 0 0 1 483.1917 289.1225)" class="st4 st5 st6">S</text>
+		<text transform="matrix(1 0 0 1 630.432 135.4524)" class="st4 st5 st6">W</text>
+		<text transform="matrix(1 0 0 1 330.4377 135.4529)" class="st4 st5 st6">E</text>
+		<text transform="matrix(1 0 0 1 366.8929 149.0193)" class="st5 st7">8</text>
+		<text transform="matrix(1 0 0 1 396.8929 149.0193)" class="st5 st7">6</text>
+		<text transform="matrix(1 0 0 1 426.8929 149.0193)" class="st5 st7">4</text>
+		<text transform="matrix(1 0 0 1 456.8928 149.0193)" class="st5 st7">2</text>
+		<text transform="matrix(1 0 0 1 516.8928 149.0193)" class="st5 st7">2</text>
+		<text transform="matrix(1 0 0 1 546.8928 149.0193)" class="st5 st7">4</text>
+		<text transform="matrix(1 0 0 1 576.8928 149.0193)" class="st5 st7">6</text>
+		<text transform="matrix(1 0 0 1 606.8928 149.0193)" class="st5 st7">8</text>
+		<text transform="matrix(1 0 0 1 557.0463 -3.3888)" class="st5 st7">1</text>
+		<text transform="matrix(1 0 0 1 619.4509 58.0525)" class="st5 st7">2</text>
+		<text transform="matrix(1 0 0 1 620.4509 205.8488)" class="st5 st7">3</text>
+		<text transform="matrix(1 0 0 1 561.0463 266)" class="st5 st7">4</text>
+		<text transform="matrix(1 0 0 1 411.8348 265.0001)" class="st5 st7">5</text>
+		<text transform="matrix(1 0 0 1 353.2435 204.849)" class="st5 st7">6</text>
+		<text transform="matrix(1 0 0 1 355.2435 57.0521)" class="st5 st7">7</text>
+		<text transform="matrix(1 0 0 1 413.8349 -0.3887)" class="st5 st7">8</text>
+		<text transform="matrix(1 0 0 1 484.1907 134.4529)" class="st8 st5 st7">A</text>
+	</g>
+	<g id="contourCadran" class="st1">
+		<path class="st9" d="M645.5-57H337.8c-17.1,0-31.2,14-31.2,31.2v307.6c0,17.1,14,31.2,31.2,31.2h307.6c17.1,0,31.2-14,31.2-31.2
+			V-25.8C676.6-43,662.6-57,645.5-57z M491.6,294.8c-92.1,0-166.8-74.7-166.8-166.8S399.5-38.8,491.6-38.8S658.5,35.9,658.5,128
+			S583.8,294.8,491.6,294.8z"/>
+	</g>
+	<g id="logo_1_">
+		<g class="st1">
+			<circle id="Fond" class="st10" cx="801.7" cy="-729.4" r="21.9"/>
+			<g>
+				<path class="st11" d="M790.2-716.4c0-2.2,2.5-12.8,11.5-12.8s11.6-9.7,11.6-12.3"/>
+				<rect x="793.7" y="-741.4" class="st8" width="7" height="25.1"/>
+				<rect x="802.7" y="-741.4" class="st8" width="7" height="25.1"/>
+			</g>
+		</g>
+	</g>
+	<g id="logo_-_copie">
+		<g class="st1">
+			<circle id="Fond_1_" class="st10" cx="1110.3" cy="-729.4" r="21.9"/>
+			<g>
+				<path class="st11" d="M1098.7-716.4c0-2.2,2.5-12.8,11.5-12.8s11.6-9.7,11.6-12.3"/>
+				<rect x="1102.3" y="-741.4" class="st8" width="7" height="25.1"/>
+				<rect x="1111.3" y="-741.4" class="st8" width="7" height="25.1"/>
+			</g>
+		</g>
+	</g>
+	<g id="logo_-_copie_2" class="st1">
+		<g>
+			<circle id="Fond_2_" class="st10" cx="646" cy="282" r="21.9"/>
+			<g>
+				<path class="st11" d="M634.3,295.1c0-2.2,2.5-12.8,11.5-12.8s11.6-9.7,11.6-12.3"/>
+				<rect x="638" y="270" class="st8" width="7" height="25.1"/>
+				<rect x="647" y="270" class="st8" width="7" height="25.1"/>
+			</g>
+		</g>
+	</g>
+	<g id="logo_-_copie_3" class="st1">
+		<g>
+			<circle id="Fond_3_" class="st10" cx="337.2" cy="282" r="21.9"/>
+			<g>
+				<path class="st11" d="M325.6,295.1c0-2.2,2.5-12.8,11.5-12.8s11.6-9.7,11.6-12.3"/>
+				<rect x="329.2" y="270" class="st8" width="7" height="25.1"/>
+				<rect x="338.2" y="270" class="st8" width="7" height="25.1"/>
+			</g>
+		</g>
+	</g>
+	<g id="reperes">
+	</g>
+</g>
+<g id="Calque_2">
+	<polygon class="st12" points="475.9,163.6 506.4,163.6 536.8,267 451,267 	"/>
+</g>
+<g id="Calque_3" class="st0">
+	<g id="grille" class="st1">
+		<line class="st13" x1="629.5" y1="128" x2="352.8" y2="128"/>
+		<line class="st13" x1="491.1" y1="-9.4" x2="491.1" y2="265.4"/>
+		<line class="st14" x1="373.4" y1="10.3" x2="608.8" y2="245.7"/>
+		<line class="st14" x1="372.9" y1="246.2" x2="609.3" y2="9.8"/>
+	</g>
+	<g id="cercles" class="st1">
+		<circle class="st15" cx="491.1" cy="128" r="138.3"/>
+		<circle class="st16" cx="491.1" cy="128" r="15.3"/>
+		<circle class="st15" cx="491.1" cy="128" r="105.6"/>
+		<circle class="st15" cx="491.1" cy="128" r="75.6"/>
+		<circle class="st15" cx="491.1" cy="128" r="45.6"/>
+	</g>
+</g>
+</svg>

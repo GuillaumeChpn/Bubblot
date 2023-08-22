@@ -1,0 +1,14 @@
+<div class="cadrans-winder-container winder-panel right-one" ng-class="{off: railMode}">
+    <div class="cadran three"></div>
+    <div class="progress-pie"></div>
+    <div class="text-length">Length [m]</div>
+    <div class="text-pressure">Low pressure</div>
+    <div class="text-bar">[bar]</div>
+    <div class="panel-container">
+        <strong><div class="winder3"></div></strong>
+    </div>
+    <input type="text" class="min-pressure3">
+    <div class="btn-quittance-pressure" ng-click="reset=!reset">Reset</div>
+    <circle-progress value="pressure" circle-size="circleSize" circle-thickness="circleThickness" circle-ratio="0.75" circle-color=(pressureAlert?1:0)/>
+    <div class="winder-warning" ng-class="{on:winderAlert}"></div>
+</div>

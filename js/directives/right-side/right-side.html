@@ -1,0 +1,24 @@
+<!-- THRUST -->
+<thrust engine1-angle="rightData.engine1Angle" engine1-radius="rightData.engine1Radius" engine2-angle="rightData.engine2Angle" engine2-radius="rightData.engine2Radius"
+        engine3-angle="rightData.engine3Angle" engine3-radius="rightData.engine3Radius" engine4-angle="rightData.engine4Angle" engine4-radius="rightData.engine4Radius"
+        thrust="rightData.thrust" thrust-top-switch-on="rightData.thrustTopSwitchOn" thrust-bottom-switch-on="rightData.thrustBottomSwitchOn"  thrust-drag-on="rightData.thrustDragOn" 
+        circle-size="thrustSize" circle-thickness="thrustThickness" ng-click="focusRight(0, setThrustSize)" ng-class="rightData.positionClass[0]"
+        focus-index="rightData.focusRightIndex" help="rightData.help"></thrust>
+
+<!-- DIRECTION -->
+<direction angle-storage="rightData.angleStorage" angle-north="rightData.angleNorth" angle-b1="rightData.angleB1" angle-b2="rightData.angleB2" angle-b3="rightData.angleB3"
+    ng-click="focusRight(1)" ng-class="rightData.positionClass[1]"></direction>
+
+<!--  DEPTH -->
+<deep depth="rightData.depth" security="rightData.security" security-alert="rightData.securityAlert" ballast-state="rightData.ballastState" 
+    ballast-fill="rightData.ballastFill" ballast-empty="rightData.ballastEmpty" sonar-distance="rightData.sonarDistance"
+    circle-size="depthSize" circle-thickness="depthThickness" focus-index="rightData.focusRightIndex" ng-click="focusRight(2, setDepthSize)"
+    ng-class="rightData.positionClass[2]"></deep>
+
+<!-- LIGHTING -->
+<lighting spotlight-intensity="rightData.spotlightIntensity" foglight-intensity="rightData.foglightIntensity" 
+            spotlight-switch-on="rightData.spotlightSwitchOn" foglight-switch-on="rightData.foglightSwitchOn" ng-click="focusRight(3)"
+            ng-class="rightData.positionClass[3]" help="rightData.help" focus-index="rightData.focusRightIndex"></lighting>
+
+<!-- CAMERA -->
+<camera camera-rec="rightData.cameraRec" camera-rec-menu="rightData.cameraRecMenu" camera-play="rightData.cameraPlay" ng-click="focusRight(4)" ng-class="rightData.positionClass[4]"></camera>

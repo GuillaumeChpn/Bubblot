@@ -1,0 +1,11 @@
+<div id="camera" class="cadrans-container camera">
+    <div class="cadran"></div>
+    <div class="canvasCamera">
+            <video class="cameraGear" autoplay loop></video>
+    </div>
+    <div class="red-circle"  ng-class="{on: cameraRec}"></div>
+    <div class="green-circle"  ng-class="{on: (!cameraRecMenu)}"></div>
+    <div class="btn-rec"  ng-click="rec()"></div>
+    <div class="btn-play" ng-class="{pause: cameraPlay}" ng-click="play()"></div>
+    <div class="btn-share" ng-click="save()"></div>
+</div>

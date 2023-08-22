@@ -1,0 +1,14 @@
+
+<!-- POWER -->
+<pump-power needle-angle="rightDataPump.powerNeedleAngle" thrust="rightDataPump.thrust" ng-class="rightDataPump.positionClass[0]" ng-click="pumpFocusRight(0, setPumpThrustSize)"
+        circle-size="pumpThrustSize" circle-thickness="pumpThrustThickness" focus-index="rightDataPump.focusRightIndex"  help="rightDataPump.help"></pump-power>
+
+<!-- DIRECTION -->
+<pump-direction angle-storage="rightData.angleStorage" angle-north="rightData.angleNorth" angle-b1="rightData.angleB1" angle-b2="rightData.angleB2" angle-b3="rightData.angleB3"
+        ng-click="pumpFocusRight(1)" ng-class="rightDataPump.positionClass[1]" focus-index="rightDataPump.focusRightIndex" is-ctrl="rightDataPump.isCtrl"
+        help="rightDataPump.help"></pump-direction>
+
+<!--  DEPTH -->
+<pump-deep depth="rightDataPump.depth" security="rightDataPump.security" security-alert="rightDataPump.securityAlert" ballast-state="rightDataPump.ballastState" 
+    circle-size="pumpDepthSize" circle-thickness="pumpDepthThickness" focus-index="rightDataPump.focusRightIndex" ng-class="rightDataPump.positionClass[2]" 
+    ng-click="pumpFocusRight(2, setPumpDepthSize)"></pump-deep>

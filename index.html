@@ -1,0 +1,918 @@
+<html ng-app="bubblot">
+
+<head>
+    <meta charset="utf-8">
+    <title>Bubblot NW</title>
+    <meta name="viewport" content="initial-scale=2, maximum-scale=2, user-scalable=no, width=device-width">
+    <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="caleandar-master/css/theme2.css">
+
+    <script>
+        var _yocto_api = {};
+        var YoctoLibExport = function (symbol, definition) {
+            _yocto_api[symbol] = definition;
+        }
+        if (typeof require != 'undefined') {
+            require("ws");
+            require("crypto");
+        }
+    </script>
+    <script type="text/javascript" src="js/math.js"></script>
+    <script type="text/javascript" src="js/yocto_api.js"></script>
+    <script type="text/javascript" src="js/yocto_tilt.js"></script>
+    <script type="text/javascript" src="js/yocto_compass.js"></script>
+    <script type="text/javascript" src="js/yocto_accelerometer.js"></script>
+    <script type="text/javascript" src="js/yocto_gyro.js"></script>
+    <script type="text/javascript" src="js/yocto_gps.js"></script>
+    <script type="text/javascript" src="js/yocto_servo.js"></script>
+    <script type="text/javascript" src="js/yocto_colorled.js"></script>
+    <script type="text/javascript" src="js/yocto_colorledcluster.js"></script>
+    <script type="text/javascript" src="js/yocto_temperature.js"></script>
+    <script type="text/javascript" src="js/yocto_anbutton.js"></script>
+    <script type="text/javascript" src="js/yocto_relay.js"></script>
+    <script type="text/javascript" src="js/yocto_pwmoutput.js"></script>
+    <script type="text/javascript" src="js/yocto_pwminput.js"></script>
+    <script type="text/javascript" src="js/yocto_digitalio.js"></script>
+    <script type="text/javascript" src="js/yocto_motor.js"></script>
+    <script type="text/javascript" src="js/yocto_pressure.js"></script>
+    <script type="text/javascript" src="js/yocto_quadraturedecoder.js"></script>
+    <script type="text/javascript" src="js/yocto_datalogger.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/circle-progress.js"></script>
+    <script type="text/javascript" src="js/chart.js"></script>
+    <script type="text/javascript" src="js/shortcut.js"></script>
+
+    <script>
+        if (typeof require != 'undefined') {
+            require("ws");
+            require("crypto");
+            var randomFillSync = require("crypto").randomFillSync;
+            var fs = require('fs');
+            var recordRTC = require('recordrtc');
+            var SerialPort = require('serialport');
+            var Readline = require('@serialport/parser-readline');
+            var NodeCouchDb = require('node-couchdb');
+            var http = require("http");
+            var node_ssh = require('node-ssh');
+        }
+    </script>
+
+    <script>
+        //create a server object:
+        //try
+        http.createServer(onRequest).listen(8080); //the server object listens on port 8080
+        console.log("Server is now running...");
+        //404 response
+        function send404Response(response) {
+            response.writeHead(404, { "Content-Type": "text-plain" });
+            response.write("Error 404: Page not found!");
+            response.end();
+        }
+        //Handle user request
+        function onRequest(request, response) {
+            if (request.url == '/main.css') {
+                fs.readFile('Raspberry/raspberry-web/main.css', function (err, data) {
+                    response.writeHead(200, { 'Content-Type': 'text/css', 'Content-Length': data.length });
+                    response.write(data);
+                    response.end();
+                });
+            }
+            else if (request.url == '/main.js') {
+                fs.readFile('Raspberry/raspberry-web/main.js', function (err, data) {
+                    response.writeHead(200, { 'Content-Type': 'text/javascript', 'Content-Length': data.length });
+                    response.write(data);
+                    response.end();
+                });
+            }
+            else if (request.url == '/img/happy.png') {
+                fs.readFile('Raspberry/raspberry-web/img/happy.png', function (err, data) {
+                    response.writeHead(200, { 'Content-Type': 'image/png', 'Content-Length': data.length });
+                    response.write(data);
+                    response.end();
+                });
+            }
+            else if (request.url == '/img/sad.png') {
+                fs.readFile('Raspberry/raspberry-web/img/sad.png', function (err, data) {
+                    response.writeHead(200, { 'Content-Type': 'image/png', 'Content-Length': data.length });
+                    response.write(data);
+                    response.end();
+                });
+            }
+            else if (request.url == '/img/nice.png') {
+                fs.readFile('Raspberry/raspberry-web/img/nice.png', function (err, data) {
+                    response.writeHead(200, { 'Content-Type': 'image/png', 'Content-Length': data.length });
+                    response.write(data);
+                    response.end();
+                });
+            }
+            else if (request.url == '/img/minionFace.png') {
+                fs.readFile('Raspberry/raspberry-web/img/minionFace.png', function (err, data) {
+                    response.writeHead(200, { 'Content-Type': 'image/png', 'Content-Length': data.length });
+                    response.write(data);
+                    response.end();
+                });
+            }
+            else if (request.url == '/img/minionGlass.png') {
+                fs.readFile('Raspberry/raspberry-web/img/minionGlass.png', function (err, data) {
+                    response.writeHead(200, { 'Content-Type': 'image/png', 'Content-Length': data.length });
+                    response.write(data);
+                    response.end();
+                });
+            }
+            else if (request.url == '/img/minionGlass2.png') {
+                fs.readFile('Raspberry/raspberry-web/img/minionGlass2.png', function (err, data) {
+                    response.writeHead(200, { 'Content-Type': 'image/png', 'Content-Length': data.length });
+                    response.write(data);
+                    response.end();
+                });
+            }
+            else if (request.url == '/img/hublot.gif') {
+                fs.readFile('Raspberry/raspberry-web/img/hublot.gif', function (err, data) {
+                    response.writeHead(200, { 'Content-Type': 'image/gif', 'Content-Length': data.length });
+                    response.write(data);
+                    response.end();
+                });
+            }
+            else if (request.url == '/img/pacman.gif') {
+                fs.readFile('Raspberry/raspberry-web/img/pacman.gif', function (err, data) {
+                    response.writeHead(200, { 'Content-Type': 'image/gif', 'Content-Length': data.length });
+                    response.write(data);
+                    response.end();
+                });
+            }
+            else if (request.url == '/img/shark.gif') {
+                fs.readFile('Raspberry/raspberry-web/img/shark.gif', function (err, data) {
+                    response.writeHead(200, { 'Content-Type': 'image/gif', 'Content-Length': data.length });
+                    response.write(data);
+                    response.end();
+                });
+            }
+            else if (request.url == '/img/minion.gif') {
+                fs.readFile('Raspberry/raspberry-web/img/minion.gif', function (err, data) {
+                    response.writeHead(200, { 'Content-Type': 'image/gif', 'Content-Length': data.length });
+                    response.write(data);
+                    response.end();
+                });
+            }
+            else if (request.url == '/img/minion2.gif') {
+                fs.readFile('Raspberry/raspberry-web/img/minion2.gif', function (err, data) {
+                    response.writeHead(200, { 'Content-Type': 'image/gif', 'Content-Length': data.length });
+                    response.write(data);
+                    response.end();
+                });
+            }
+            else if (request.url == '/img/bubble.gif') {
+                fs.readFile('Raspberry/raspberry-web/img/bubble.gif', function (err, data) {
+                    response.writeHead(200, { 'Content-Type': 'image/gif', 'Content-Length': data.length });
+                    response.write(data);
+                    response.end();
+                });
+            }
+            else {
+                fs.readFile('Raspberry/raspberry-web/index.html', function (err, data) {
+                    response.writeHead(200, { 'Content-Type': 'text/html', 'Content-Length': data.length });
+                    response.write(data);
+                    response.end();
+                });
+            }
+
+        }
+        //SSH connection to refresh the HTML page on the raspberry
+        var ssh = new node_ssh();
+        const password = 'bubblot'
+        ssh.connect({
+            host: '192.168.1.3',
+            username: 'pi',
+            port: 22,
+            password,
+            tryKeyboard: true,
+        })
+        //CouchDB instance of bubblot 1
+        const couchBubblot1 = new NodeCouchDb({
+            host: 'localhost', //IP address bubblot 1 192.168.1.1
+            protocol: 'http',
+            port: 5984,
+            auth: {
+                user: 'admin',
+                pass: 'admin'
+            }
+        });
+        //Init winder user in the dataBase
+        var idWinder = "834ff7bebfa35ece5046ff7d0b0001cf";
+        //idPerso: 0f14989011256516380f22bc5f003f2c
+        //idZotac: 203dcd7303db8df08d50a660c8008ee7
+        var idPump = "834ff7bebfa35ece5046ff7d0b0012b5";
+        //idPerso: 56ba23e46550745a92abf78d220043a5
+        //idZotac: 203dcd7303db8df08d50a660c804f8a5
+        var idBubblot = "1";
+        couchBubblot1.get("winder", idWinder).then(({ data, headers, status }) => {
+            // data is json response 
+            // headers is an object with all response headers 
+            // status is statusCode number 
+            if (data.user == idBubblot) {
+                couchBubblot1.update("winder", {
+                    _id: data._id,
+                    _rev: data._rev,
+                    user: "0",
+                }).then(({ data, headers, status }) => {
+                    // data is json response 
+                    // headers is an object with all response headers 
+                    // status is statusCode number 
+                }, err => {
+                    // either request error occured 
+                    // ...or err.code=EFIELDMISSING if either _id or _rev fields are missing 
+                    console.log(err.code);
+                });
+            }
+        }, err => {
+            // either request error occured 
+            // ...or err.code=EDOCMISSING if document is missing 
+            // ...or err.code=EUNKNOWN if statusCode is unexpected 
+            console.log(err.code);
+        });
+        //Init winder user in the dataBase 
+        couchBubblot1.get("pump", idPump).then(({ data, headers, status }) => {
+            // data is json response 
+            // headers is an object with all response headers 
+            // status is statusCode number 
+            if (data.user == idBubblot) {
+                couchBubblot1.update("pump", {
+                    _id: data._id,
+                    _rev: data._rev,
+                    user: "0",
+                }).then(({ data, headers, status }) => {
+                    // data is json response 
+                    // headers is an object with all response headers 
+                    // status is statusCode number 
+                }, err => {
+                    // either request error occured 
+                    // ...or err.code=EFIELDMISSING if either _id or _rev fields are missing 
+                    console.log(err.code);
+                });
+            }
+        }, err => {
+            // either request error occured 
+            // ...or err.code=EDOCMISSING if document is missing 
+            // ...or err.code=EUNKNOWN if statusCode is unexpected 
+            console.log(err.code);
+        });
+        function show(shown, hidden) {
+            //Update the winder user in the dataBase 
+            if (shown == "winderDisplay") {
+                couchBubblot1.get("winder", idWinder).then(({ data, headers, status }) => {
+                    // data is json response 
+                    // headers is an object with all response headers 
+                    // status is statusCode number
+                    //Change user if no user already
+                    if (data.user == "0") {
+                        couchBubblot1.update("winder", {
+                            _id: data._id,
+                            _rev: data._rev,
+                            user: idBubblot,
+                        }).then(({ data, headers, status }) => {
+                            // data is json response 
+                            // headers is an object with all response headers 
+                            // status is statusCode number 
+                        }, err => {
+                            // either request error occured 
+                            // ...or err.code=EFIELDMISSING if either _id or _rev fields are missing 
+                            console.log(err.code);
+                        });
+                        //Update display
+                        document.getElementById(hidden).style.display = 'none';
+                        document.getElementById(shown).style.display = 'block';
+                    }
+                    else {
+                        //Display alert message
+                        var objWinderUser = document.getElementsByClassName("alert-winder-user");
+                        for (var i = 0; objWinderUser.length; i++) {
+                            objWinderUser[i].innerHTML = "User " + data.user;
+                            objWinderUser[i].style.opacity = 1;
+                            if (i == 0) {
+                                setTimeout(function () {
+                                    objWinderUser[0].style.opacity = 0;
+                                }, 3000);
+                            }
+                            else if (i == 1) {
+                                setTimeout(function () {
+                                    objWinderUser[1].style.opacity = 0;
+                                }, 3000);
+                            }
+                            else if (i == 2) {
+                                setTimeout(function () {
+                                    objWinderUser[2].style.opacity = 0;
+                                }, 3000);
+                            }
+                            else if (i == 3) {
+                                setTimeout(function () {
+                                    objWinderUser[3].style.opacity = 0;
+                                }, 3000);
+                            }
+                            else if (i == 4) {
+                                setTimeout(function () {
+                                    objWinderUser[4].style.opacity = 0;
+                                }, 3000);
+                            }
+                            else if (i == 5) {
+                                setTimeout(function () {
+                                    objWinderUser[5].style.opacity = 0;
+                                }, 3000);
+                            }
+                            else if (i == 6) {
+                                setTimeout(function () {
+                                    objWinderUser[6].style.opacity = 0;
+                                }, 3000);
+                            }
+                            else if (i == 7) {
+                                setTimeout(function () {
+                                    objWinderUser[7].style.opacity = 0;
+                                }, 3000);
+                            }
+                        }
+                        return false;
+                    }
+                }, err => {
+                    // either request error occured 
+                    // ...or err.code=EDOCMISSING if document is missing 
+                    // ...or err.code=EUNKNOWN if statusCode is unexpected 
+                    console.log(err.code);
+                    //Update display
+                    document.getElementById(hidden).style.display = 'none';
+                    document.getElementById(shown).style.display = 'block';
+                });
+            }
+            else if (shown == "pumpDisplay") {
+                couchBubblot1.get("pump", idPump).then(({ data, headers, status }) => {
+                    // data is json response 
+                    // headers is an object with all response headers 
+                    // status is statusCode number
+                    //Change user if no user already
+                    if (data.user == "0") {
+                        couchBubblot1.update("pump", {
+                            _id: data._id,
+                            _rev: data._rev,
+                            user: idBubblot, //change for each bubblot
+                        }).then(({ data, headers, status }) => {
+                            // data is json response 
+                            // headers is an object with all response headers 
+                            // status is statusCode number 
+                        }, err => {
+                            // either request error occured 
+                            // ...or err.code=EFIELDMISSING if either _id or _rev fields are missing 
+                            console.log(err.code);
+                        });
+                        //Update display
+                        document.getElementById(hidden).style.display = 'none';
+                        document.getElementById(shown).style.display = 'block';
+                    }
+                    else {
+                        //Display alert message
+                        var objPumpUser = document.getElementsByClassName("alert-pump-user");
+                        for (var i = 0; objPumpUser.length; i++) {
+                            objPumpUser[i].innerHTML = "User " + data.user;
+                            objPumpUser[i].style.opacity = 1;
+                            if (i == 0) {
+                                setTimeout(function () {
+                                    objPumpUser[0].style.opacity = 0;
+                                }, 3000);
+                            }
+                            else if (i == 1) {
+                                setTimeout(function () {
+                                    objPumpUser[1].style.opacity = 0;
+                                }, 3000);
+                            }
+                            else if (i == 2) {
+                                setTimeout(function () {
+                                    objPumpUser[2].style.opacity = 0;
+                                }, 3000);
+                            }
+                            else if (i == 3) {
+                                setTimeout(function () {
+                                    objPumpUser[3].style.opacity = 0;
+                                }, 3000);
+                            }
+                            else if (i == 4) {
+                                setTimeout(function () {
+                                    objPumpUser[4].style.opacity = 0;
+                                }, 3000);
+                            }
+                            else if (i == 5) {
+                                setTimeout(function () {
+                                    objPumpUser[5].style.opacity = 0;
+                                }, 3000);
+                            }
+                            else if (i == 6) {
+                                setTimeout(function () {
+                                    objPumpUser[6].style.opacity = 0;
+                                }, 3000);
+                            }
+                            else if (i == 7) {
+                                setTimeout(function () {
+                                    objPumpUser[7].style.opacity = 0;
+                                }, 3000);
+                            }
+                        }
+                        return false;
+                    }
+                }, err => {
+                    // either request error occured 
+                    // ...or err.code=EDOCMISSING if document is missing 
+                    // ...or err.code=EUNKNOWN if statusCode is unexpected 
+                    console.log(err.code);
+                    //Update display
+                    document.getElementById(hidden).style.display = 'none';
+                    document.getElementById(shown).style.display = 'block';
+                });
+            }
+            else {
+                //Update display
+                document.getElementById(hidden).style.display = 'none';
+                document.getElementById(shown).style.display = 'block';
+            }
+            //Clear the winder user in the dataBase
+            if (hidden == "winderDisplay") {
+                couchBubblot1.get("winder", idWinder).then(({ data, headers, status }) => {
+                    // data is json response 
+                    // headers is an object with all response headers 
+                    // status is statusCode number 
+                    //Clear user only if it is me
+                    if (data.user == idBubblot) { //change for each bubblot
+                        couchBubblot1.update("winder", {
+                            _id: data._id,
+                            _rev: data._rev,
+                            user: "0",
+                        }).then(({ data, headers, status }) => {
+                            // data is json response 
+                            // headers is an object with all response headers 
+                            // status is statusCode number 
+                        }, err => {
+                            // either request error occured 
+                            // ...or err.code=EFIELDMISSING if either _id or _rev fields are missing 
+                            console.log(err.code);
+                        });
+                    }
+                }, err => {
+                    // either request error occured 
+                    // ...or err.code=EDOCMISSING if document is missing 
+                    // ...or err.code=EUNKNOWN if statusCode is unexpected 
+                    console.log(err.code);
+                });
+            }
+            //Clear the pump user in the dataBase
+            else if (hidden == "pumpDisplay") {
+                couchBubblot1.get("pump", idPump).then(({ data, headers, status }) => {
+                    // data is json response 
+                    // headers is an object with all response headers 
+                    // status is statusCode number 
+                    // Clear user only if it is me
+                    if (data.user == idBubblot) { //change for each bubblot
+                        couchBubblot1.update("pump", {
+                            _id: data._id,
+                            _rev: data._rev,
+                            user: "0",
+                        }).then(({ data, headers, status }) => {
+                            // data is json response 
+                            // headers is an object with all response headers 
+                            // status is statusCode number 
+                        }, err => {
+                            // either request error occured 
+                            // ...or err.code=EFIELDMISSING if either _id or _rev fields are missing 
+                            console.log(err.code);
+                        });
+                    }
+                }, err => {
+                    // either request error occured 
+                    // ...or err.code=EDOCMISSING if document is missing 
+                    // ...or err.code=EUNKNOWN if statusCode is unexpected 
+                    console.log(err.code);
+                });
+            }
+            return false;
+        }
+    </script>
+
+</head>
+
+<body ng-controller="mainController as vm" style="background-color:rgba(0,0,0,0);">
+
+    <!-- Audio winder ALERT -->
+    <audio src="img/audioAlert.wav" id="audio-alert-winder" loop></audio>
+    <!-- Audio bubblot ALERT -->
+    <audio src="img/audioAlert4.wav" id="audio-alert-bubblot" loop></audio>
+    <!-- Audio pump ALERT -->
+    <audio src="img/audioAlert4.wav" id="audio-alert-pump" loop></audio>
+
+    <!-- Bubblot display -->
+    <div id="bubblotDisplay">
+        <video src="img/video.webm" class="camera-bubblot" autoplay style="width:100%;height:100%;z-index: -10;display:blok" loop></video>
+        <!-- Background video for presentation -->
+        <video src="img/video.webm" class="video-background" style="position: fixed; top:-100%; left:-50%; width:200%; height: 200%; display:none;"
+            autoplay loop></video>
+        <div id="fond-marin" class="fond-marin">
+            <!-- Cadrans de gauche -->
+            <left-side data="leftData"></left-side>
+            <!-- Cadrans de droite -->
+            <right-side data="rightData"></right-side>
+            <!-- Notifications -->
+            <notification data="notifData"></notification>
+            <!-- display bubblot -->
+            <a class="btn-bubblot disable" href="#">Bubblot</a>
+            <!-- display pump -->
+            <a class="btn-pump" href="#" onclick="return show('pumpDisplay','bubblotDisplay');">Pump</a>
+            <!-- display cable winder -->
+            <a class="btn-winder" href="#" onclick="return show('winderDisplay','bubblotDisplay');">Winders</a>
+            <!-- display map -->
+            <a class="btn-map" href="#" onclick="return show('mapDisplay','bubblotDisplay');">Map</a>
+        </div>
+
+        <div id="fond-marin2" class="fond-marin2">
+            <!-- Cadrans de gauche -->
+            <left-side data="leftData"></left-side>
+            <!-- Cadrans de droite -->
+            <right-side data="rightData"></right-side>
+            <!-- Notifications -->
+            <notification data="notifData"></notification>
+            <!-- display bubblot -->
+            <a class="btn-bubblot disable" href="#">Bubblot</a>
+            <!-- display pump -->
+            <a class="btn-pump" href="#" onclick="return show('pumpDisplay','bubblotDisplay');">Pump</a>
+            <!-- display cable winder -->
+            <a class="btn-winder" href="#" onclick="return show('winderDisplay','bubblotDisplay');">Winders</a>
+            <!-- display map -->
+            <a class="btn-map" href="#" onclick="return show('mapDisplay','bubblotDisplay');">Map</a>
+        </div>
+    </div>
+
+    <!-- Pump display -->
+    <div id="pumpDisplay" style="display:none;overflow:hidden">
+        <video src="img/video.webm" class="camera-pump" autoplay style="width:100%;height:100%;z-index: -10" loop></video>
+        <div id="fond-marin" class="fond-marin">
+            <!-- Camera view -->
+            <video class="camera-pump1" autoplay loop></video>
+            <!-- Background image for demo -->
+            <img src="img/fondPumpDemo2.png" style="width:100%;height:100%;z-index: -10"></img>
+            <!-- Cadrans de gauche -->
+            <left-side-pump data="leftDataPump"></left-side-pump>
+            <!-- Cadrans de droite -->
+            <right-side-pump data="rightDataPump"></right-side-pump>
+            <!-- Notifications -->
+            <notification data="notifData"></notification>
+            <!-- display bubblot -->
+            <a class="btn-bubblot" href="#" onclick="return show('bubblotDisplay','pumpDisplay');">Bubblot</a>
+            <!-- display pump -->
+            <a class="btn-pump disable" href="#">Pump</a>
+            <!-- display cable winder -->
+            <a class="btn-winder" href="#" onclick="return show('winderDisplay','pumpDisplay');">Winders</a>
+            <!-- display map -->
+            <a class="btn-map" href="#" onclick="return show('mapDisplay','pumpDisplay');">Map</a>
+        </div>
+
+        <div id="fond-marin2" class="fond-marin2">
+            <!-- Camera view -->
+            <video class="camera-pump2" autoplay loop></video>
+            <!-- Background image for demo -->
+            <img src="img/fondPumpDemo2.png" style="width:100%;height:100%;z-index: -10"></img>
+            <!-- Cadrans de gauche -->
+            <left-side-pump data="leftDataPump"></left-side-pump>
+            <!-- Cadrans de droite -->
+            <right-side-pump data="rightDataPump"></right-side-pump>
+            <!-- Notifications -->
+            <notification data="notifData"></notification>
+            <!-- display bubblot -->
+            <a class="btn-bubblot" href="#" onclick="return show('bubblotDisplay','pumpDisplay');">Bubblot</a>
+            <!-- display pump -->
+            <a class="btn-pump disable" href="#">Pump</a>
+            <!-- display cable winder -->
+            <a class="btn-winder" href="#" onclick="return show('winderDisplay','pumpDisplay');">Winders</a>
+            <!-- display map -->
+            <a class="btn-map" href="#" onclick="return show('mapDisplay','pumpDisplay');">Map</a>
+        </div>
+    </div>
+
+    <!-- Cable winder display -->
+    <div id="winderDisplay" style="display:none;overflow:hidden">
+        <div id="fond-marin" class="fond-marin">
+            <!-- Camera view -->
+
+            <!-- Background image for demo -->
+            <img src="img/fondWinderDemo.jpg" style="width:100%;height:100%;z-index: -10"></img>
+            <!-- Cadrans cable winder -->
+            <cable-winder data="winderData"></cable-winder>
+            <!-- Notifications -->
+            <notification data="notifData"></notification>
+            <!-- display bubblot -->
+            <a class="btn-bubblot" href="#" onclick="return show('bubblotDisplay','winderDisplay');">Bubblot</a>
+            <!-- display pump -->
+            <a class="btn-pump" href="#" onclick="return show('pumpDisplay','winderDisplay');">Pump</a>
+            <!-- display cable winder -->
+            <a class="btn-winder disable" href="#">Winders</a>
+            <!-- display map -->
+            <a class="btn-map" href="#" onclick="return show('mapDisplay','winderDisplay');">Map</a>
+        </div>
+
+        <div id="fond-marin2" class="fond-marin2">
+            <!-- Camera view -->
+
+            <!-- Background image for demo -->
+            <img src="img/fondWinderDemo.jpg" style="width:100%;height:100%;z-index: -10"></img>
+            <!-- Cadrans cable winder -->
+            <cable-winder data="winderData"></cable-winder>
+            <!-- Notifications -->
+            <notification data="notifData"></notification>
+            <!-- display bubblot -->
+            <a class="btn-bubblot" href="#" onclick="return show('bubblotDisplay','winderDisplay');">Bubblot</a>
+            <!-- display pump -->
+            <a class="btn-pump" href="#" onclick="return show('pumpDisplay','winderDisplay');">Pump</a>
+            <!-- display cable winder -->
+            <a class="btn-winder disable" href="#">Winders</a>
+            <!-- display map -->
+            <a class="btn-map" href="#" onclick="return show('mapDisplay','winderDisplay');">Map</a>
+        </div>
+    </div>
+
+    <!-- Map display -->
+    <div id="mapDisplay" style="display:none;overflow:hidden">
+        <div id="fond-marin" class="fond-marin">
+            <!-- Map -->
+            <map data="mapData"></map>
+            <!-- Notifications -->
+            <notification data="notifData"></notification>
+            <!-- display bubblot -->
+            <a class="btn-bubblot" href="#" onclick="return show('bubblotDisplay','mapDisplay');">Bubblot</a>
+            <!-- display pump -->
+            <a class="btn-pump" href="#" onclick="return show('pumpDisplay','mapDisplay');">Pump</a>
+            <!-- display cable winder -->
+            <a class="btn-winder" href="#" onclick="return show('winderDisplay','mapDisplay');">Winders</a>
+            <!-- display map -->
+            <a class="btn-map disable" href="#">Map</a>
+        </div>
+        <div id="fond-marin2" class="fond-marin2" style="display:block">
+            <!-- Map -->
+            <map data="mapData"></map>
+            <!-- Notifications -->
+            <notification data="notifData"></notification>
+            <!-- display bubblot -->
+            <a class="btn-bubblot" href="#" onclick="return show('bubblotDisplay','mapDisplay');">Bubblot</a>
+            <!-- display pump -->
+            <a class="btn-pump" href="#" onclick="return show('pumpDisplay','mapDisplay');">Pump</a>
+            <!-- display cable winder -->
+            <a class="btn-winder" href="#" onclick="return show('winderDisplay','mapDisplay');">Winders</a>
+            <!-- display map -->
+            <a class="btn-map disable" href="#">Map</a>
+        </div>
+    </div>
+
+    <!-- Shortcuts -->
+    <script>
+        //Bubblot display
+        shortcut.add("alt+1", function () {
+            if ($('#pumpDisplay').is(':visible')) {
+                return show('bubblotDisplay', 'pumpDisplay');
+            }
+            if ($('#winderDisplay').is(':visible')) {
+                return show('bubblotDisplay', 'winderDisplay');
+            }
+            if ($('#mapDisplay').is(':visible')) {
+                return show('bubblotDisplay', 'mapDisplay');
+            }
+        });
+        //Pump display
+        shortcut.add("alt+2", function () {
+            if ($('#bubblotDisplay').is(':visible')) {
+                return show('pumpDisplay', 'bubblotDisplay');
+            }
+            if ($('#winderDisplay').is(':visible')) {
+                return show('pumpDisplay', 'winderDisplay');
+            }
+            if ($('#mapDisplay').is(':visible')) {
+                return show('pumpDisplay', 'mapDisplay');
+            }
+        });
+        //Winder display
+        shortcut.add("alt+3", function () {
+            if ($('#bubblotDisplay').is(':visible')) {
+                return show('winderDisplay', 'bubblotDisplay');
+            }
+            if ($('#pumpDisplay').is(':visible')) {
+                return show('winderDisplay', 'pumpDisplay');
+            }
+            if ($('#mapDisplay').is(':visible')) {
+                return show('winderDisplay', 'mapDisplay');
+            }
+        });
+        //Map display
+        shortcut.add("alt+4", function () {
+            if ($('#bubblotDisplay').is(':visible')) {
+                return show('mapDisplay', 'bubblotDisplay');
+            }
+            if ($('#pumpDisplay').is(':visible')) {
+                return show('mapDisplay', 'pumpDisplay');
+            }
+            if ($('#winderDisplay').is(':visible')) {
+                return show('mapDisplay', 'winderDisplay');
+            }
+        });
+        //Presentation mode
+        shortcut.add("ctrl+2", function () {
+            var cameraPump = document.getElementsByClassName('camera-pump');
+            //var cameraBubblot = document.getElementsByClassName('camera-bubblot');
+            //var videoBackground = document.getElementsByClassName('video-background');
+            var fondMarin = document.getElementsByClassName('fond-marin');
+            var fondMarin2 = document.getElementsByClassName('fond-marin2');
+            for (var i = 0; i < cameraPump.length; i++) {
+                cameraPump[i].style.display = 'none';
+            }
+            /*
+            for (var i = 0; i < cameraBubblot.length; i++) {
+                cameraBubblot[i].style.display = 'none';
+            }
+            */
+            for (var i = 0; i < fondMarin2.length; i++) {
+                fondMarin2[i].style.display = 'none';
+            }
+            /*
+            for (var i = 0; i < videoBackground.length; i++) {
+                videoBackground[i].style.display = 'block';
+            }
+            */
+            for (var i = 0; i < fondMarin.length; i++) {
+                fondMarin[i].style = "transform: scale3d(1,1,1) translate3d(0, 0, 0);";
+            }
+
+        });
+        //3D mode
+        shortcut.add("ctrl+3", function () {
+            var cameraPump = document.getElementsByClassName('camera-pump');
+            //var cameraBubblot = document.getElementsByClassName('camera-bubblot');
+            //var videoBackground = document.getElementsByClassName('video-background');
+            var fondMarin = document.getElementsByClassName('fond-marin');
+            var fondMarin2 = document.getElementsByClassName('fond-marin2');
+            /*
+            for (var i = 0; i < videoBackground.length; i++) {
+                videoBackground[i].style.display = 'none';
+            }
+            */
+            for (var i = 0; i < cameraPump.length; i++) {
+                cameraPump[i].style.display = 'block';
+            }
+            /*
+            for (var i = 0; i < cameraBubblot.length; i++) {
+                cameraBubblot[i].style.display = 'block';
+            }
+            */
+            for (var i = 0; i < fondMarin2.length; i++) {
+                fondMarin2[i].style.display = 'block';
+            }
+            for (var i = 0; i < fondMarin.length; i++) {
+                fondMarin[i].style = "transform: scale3d(1,0.5, 1) translate3d(0, -50%, 0);";
+            }
+        });
+    </script>
+
+    <!-- Display and choose the media devices -->
+    <script>
+        navigator.mediaDevices.enumerateDevices().then(function (devices) {
+            for(var i = 0; i < devices.length; i ++){
+                var device = devices[i];
+                if (device.kind === 'videoinput') {
+                    console.log(device.deviceId + " " + device.label);
+                    if (device.label === 'HD USB Camera (05a3:9230)') {
+                        window.videoCameraId = device.deviceId;
+                        console.log('Found Record Camera ');
+                    }
+                }
+            };
+        });
+        /*
+        MediaStreamTrack.getSources(function (sourceInfos) {
+            var audioSource = null;
+            var videoSource = null;
+
+            for (var i = 0; i != sourceInfos.length; ++i) {
+                var sourceInfo = sourceInfos[i];
+                if (sourceInfo.kind === 'audio') {
+                    console.log(sourceInfo.id, sourceInfo.label || 'microphone');
+
+                    audioSource = sourceInfo.id;
+                } else if (sourceInfo.kind === 'video') {
+                    console.log(sourceInfo.id, sourceInfo.label || 'camera');
+
+                    videoSource = sourceInfo.id;
+                } else {
+                    console.log('Some other kind of source: ', sourceInfo);
+                }
+            }
+        });
+        var video = document.getElementsByClassName('camera-winder'),
+            vendorURL = window.URL || window.webkitURL;
+
+        navigator.getMedia = navigator.getUserMedia ||
+            navigator.webkitGetUserMedia ||
+            navigator.mozWetUserMedia ||
+            navigator.msGetUserMedia;
+
+        function successCallback(stream) {
+            var options = {
+                mimeType: 'video/webm',
+                bitsPerSecond: 128000
+            };
+            video[0].src = vendorURL.createObjectURL(stream);
+        }
+
+        function errorCallback(error) {
+            console.log("No cam detected, maybe another application is using the device");
+        }
+
+        var mediaConstraints = {
+            audio: false,
+            video: {
+                mandatory: {
+                    maxWidth: 640,
+                    maxHeight: 480,
+                },
+                optional: [{ sourceId: "6ca878592677b703218e45bc18851900a811fb63058f3311ab636ec74e73c228" }]
+            }
+        };
+    */
+        //navigator.getMedia(mediaConstraints, successCallback, errorCallback);
+    </script>
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/directives/circle-progress/circle-progress.js"></script>
+    <script src="js/directives/horizon/horizon.controller.js"></script>
+    <script src="js/directives/horizon/horizon.js"></script>
+    <script src="js/directives/camera/camera.controller.js"></script>
+    <script src="js/directives/camera/camera.js"></script>
+    <script src="js/directives/thrust/thrust.controller.js"></script>
+    <script src="js/directives/thrust/thrust.js"></script>
+    <script src="js/directives/direction/direction.controller.js"></script>
+    <script src="js/directives/direction/direction.js"></script>
+    <script src="js/directives/draggable/draggable.js"></script>
+    <script src="js/directives/drag-circle/drag-circle.js"></script>
+    <script src="js/directives/drag-3d-view/drag-3d-view.js"></script>
+    <script src="js/directives/drag-direction/drag-direction.js"></script>
+    <script src="js/directives/3d-view/3d-view.controller.js"></script>
+    <script src="js/directives/3d-view/3d-view.js"></script>
+    <script src="js/directives/noze/noze.js"></script>
+    <script src="js/directives/noze/noze.controller.js"></script>
+    <script src="js/directives/deep/deep.js"></script>
+    <script src="js/directives/deep/deep.controller.js"></script>
+    <script src="js/directives/lighting/lighting.js"></script>
+    <script src="js/directives/lighting/lighting.controller.js"></script>
+    <script src="js/directives/storage/storage.js"></script>
+    <script src="js/directives/storage/storage.controller.js"></script>
+    <script src="js/directives/graph/graph.js"></script>
+    <script src="js/directives/graph/graph.controller.js"></script>
+    <script src="js/directives/left-side/left-side.controller.js"></script>
+    <script src="js/directives/left-side/left-side.js"></script>
+    <script src="js/directives/right-side/right-side.controller.js"></script>
+    <script src="js/directives/right-side/right-side.js"></script>
+    <script src="js/directives/pump-gps/pump-gps.js"></script>
+    <script src="js/directives/pump-gps/pump-gps.controller.js"></script>
+    <script src="js/directives/pump-power/pump-power.js"></script>
+    <script src="js/directives/pump-power/pump-power.controller.js"></script>
+    <script src="js/directives/pump-horizon/pump-horizon.controller.js"></script>
+    <script src="js/directives/pump-horizon/pump-horizon.js"></script>
+    <script src="js/directives/pump-deep/pump-deep.js"></script>
+    <script src="js/directives/pump-deep/pump-deep.controller.js"></script>
+    <script src="js/directives/pump-direction/pump-direction.controller.js"></script>
+    <script src="js/directives/pump-direction/pump-direction.js"></script>
+    <script src="js/directives/left-side-pump/left-side-pump.controller.js"></script>
+    <script src="js/directives/left-side-pump/left-side-pump.js"></script>
+    <script src="js/directives/right-side-pump/right-side-pump.controller.js"></script>
+    <script src="js/directives/right-side-pump/right-side-pump.js"></script>
+    <script src="js/directives/winder-control/winder-control.js"></script>
+    <script src="js/directives/winder-control/winder-control.controller.js"></script>
+    <script src="js/directives/drag-winder/drag-winder.js"></script>
+    <script src="js/directives/drag-main-winder/drag-main-winder.js"></script>
+    <script src="js/directives/winder-panel1/winder-panel1.js"></script>
+    <script src="js/directives/winder-panel1/winder-panel1.controller.js"></script>
+    <script src="js/directives/winder-panel2/winder-panel2.js"></script>
+    <script src="js/directives/winder-panel2/winder-panel2.controller.js"></script>
+    <script src="js/directives/winder-panel3/winder-panel3.js"></script>
+    <script src="js/directives/winder-panel3/winder-panel3.controller.js"></script>
+    <script src="js/directives/winder-panel4/winder-panel4.js"></script>
+    <script src="js/directives/winder-panel4/winder-panel4.controller.js"></script>
+    <script src="js/directives/cable-winder/cable-winder.controller.js"></script>
+    <script src="js/directives/cable-winder/cable-winder.js"></script>
+    <script src="js/directives/notification/notification.controller.js"></script>
+    <script src="js/directives/notification/notification.js"></script>
+    <script src="js/directives/bubblot-alert/bubblot-alert.controller.js"></script>
+    <script src="js/directives/bubblot-alert/bubblot-alert.js"></script>
+    <script src="js/directives/pump-alert/pump-alert.controller.js"></script>
+    <script src="js/directives/pump-alert/pump-alert.js"></script>
+    <script src="js/directives/winder-alert/winder-alert.controller.js"></script>
+    <script src="js/directives/winder-alert/winder-alert.js"></script>
+    <script src="js/directives/map-map/map-map.controller.js"></script>
+    <script src="js/directives/map-map/map-map.js"></script>
+    <script src="js/directives/map-panel/map-panel.controller.js"></script>
+    <script src="js/directives/map-panel/map-panel.js"></script>
+    <script src="js/directives/map/map.controller.js"></script>
+    <script src="js/directives/map/map.js"></script>
+    <script src="js/directives/message/message.js"></script>
+    <script src="js/directives/message/message.controller.js"></script>
+
+</body>
+
+</html>

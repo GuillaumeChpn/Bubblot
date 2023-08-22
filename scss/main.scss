@@ -1,0 +1,609 @@
+// --------------------------------------------------------------------------------------------------------------------
+// Imports
+// --------------------------------------------------------------------------------------------------------------------
+@import "variables";
+@import "mixins";
+@import "orientation";
+@import "lighting";
+@import "thrust";
+@import "camera";
+@import "direction";
+@import "deep";
+@import "metal";
+@import "storage";
+@import "nose";
+@import "view";
+@import "pump-gps";
+@import "pump-power";
+@import "winder-control";
+@import "winder-panel";
+@import "map-panel";
+@import "map-map";
+@import "message";
+
+// --------------------------------------------------------------------------------------------------------------------
+// Base
+// --------------------------------------------------------------------------------------------------------------------
+body {
+   @include resetMargin();
+}
+
+.fond-marin {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   transform: scale3d(1,0.5, 1) translate3d(0, -50%, 0);
+   overflow: hidden;
+   display: block;
+   -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+   -moz-user-select: none; /* mozilla browsers */
+   -khtml-user-select: none; /* webkit (konqueror) browsers */
+   -ms-user-select: none; 
+   // background: url('../img/fondmarin.jpg') no-repeat 100% 100%;
+   a{
+      position: absolute;
+      top:0%;
+      width: 7%;
+      text-align: center;
+      text-decoration: none;
+      padding: 0.5% 1%;
+      color: gray;
+      text-transform: uppercase;
+      border: 5px solid gray;
+      z-index: 10;
+      cursor: pointer;
+      @include border(18px);
+      @include fontUse($fontFamilly, 27px, $fontWeight);
+      &:hover{
+        color: $activeColor;
+        border: 5px solid $activeColor;
+      }
+   }
+   .camera-pump1, .camera-pump2{
+     width:100%;
+     height:133%;
+     position: absolute; 
+     left: 0; 
+     top: -16%;
+     z-index: -10;
+   }
+   .camera-winder{
+     width:100%;
+     height:100%;
+     position: absolute; 
+     left: 0; 
+     top: 0;
+     z-index: -10;
+   }
+   .btn-bubblot{
+        left: 25%;
+        &.disable{
+          pointer-events: none;
+          color: $activeColor;
+          border: 5px solid $activeColor;
+        }
+      }
+    .btn-pump{
+        left: 38.5%;
+        &.disable{
+          pointer-events: none;
+          color: $activeColor;
+          border: 5px solid $activeColor;
+        }
+      }
+    .btn-winder{
+        right: 38.5%;
+        &.disable{
+          pointer-events: none;
+          color: $activeColor;
+          border: 5px solid $activeColor;
+        }
+      }
+      .btn-map{
+        right: 25%;
+        &.disable{
+          pointer-events: none;
+          color: $activeColor;
+          border: 5px solid $activeColor;
+        }
+      }
+      .shortcut-bubblot, .shortcut-pump, .shortcut-winder, .shortcut-map{
+        position: absolute;
+        top: 3%;
+        @include fontUse($fontFamilly, 18px, $fontWeight);
+        text-align: center;
+        padding: 0.5% 1%;
+        background-color: white;
+        z-index: 20;
+      }
+      .shortcut-bubblot{
+          left: 27.5%;
+          display: none;
+          &.on{
+            display: block;
+          }
+        }
+      .shortcut-pump{
+          left: 41%;
+          display: none;
+          &.on{
+            display: block;
+          }
+        }
+      .shortcut-winder{
+          left: 54.5%;
+          display: none;
+          &.on{
+            display: block;
+          }
+        }
+      .shortcut-map{
+          left: 68%;
+          display: none;
+          &.on{
+            display: block;
+          }
+        }
+}
+.fond-marin2 {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   width: 100%;
+   height: 100%;
+   transform: scale3d(1,0.5, 1) translate3d(0, +50%, 0);
+   overflow: hidden;
+   display: block;
+   -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+   -moz-user-select: none; /* mozilla browsers */
+   -khtml-user-select: none; /* webkit (konqueror) browsers */
+   -ms-user-select: none; 
+   //background: url('../img/fondmarin.jpg') no-repeat 100% 100%;
+   a{
+      position: absolute;
+      top:0%;
+      width: 7%;
+      text-align: center;
+      text-decoration: none;
+      padding: 0.5% 1%;
+      color: gray;
+      text-transform: uppercase;
+      border: 5px solid gray;
+      z-index: 10;
+      cursor: pointer;
+      @include border(18px);
+      @include fontUse($fontFamilly, 27px, $fontWeight);
+      pointer-events: auto;
+      &:hover{
+        color: $activeColor;
+        border: 5px solid $activeColor;
+      }
+   }
+   .camera-winder{
+    width:100%;
+    height:100%;
+    position: absolute; 
+    left: 0; 
+    top: 0;
+    z-index: -10;
+  }
+   .camera-pump1, .camera-pump2{
+     width:100%;
+     height:133%;
+     position: absolute; 
+     left: 0; 
+     top: -16%;
+     z-index: -10;
+   }
+    .btn-bubblot{
+        left: 25%;
+        &.disable{
+          pointer-events: none;
+          color: $activeColor;
+          border: 5px solid $activeColor;
+        }
+      }
+    .btn-pump{
+        left: 38.5%;
+        &.disable{
+          pointer-events: none;
+          color: $activeColor;
+          border: 5px solid $activeColor;
+        }
+      }
+    .btn-winder{
+        right: 38.5%;
+        &.disable{
+          pointer-events: none;
+          color: $activeColor;
+          border: 5px solid $activeColor;
+        }
+      }
+      .btn-map{
+        right: 25%;
+        &.disable{
+          pointer-events: none;
+          color: $activeColor;
+          border: 5px solid $activeColor;
+        }
+      }
+      .shortcut-bubblot, .shortcut-pump, .shortcut-winder, .shortcut-map{
+        position: absolute;
+        top: 3%;
+        @include fontUse($fontFamilly, 18px, $fontWeight);
+        text-align: center;
+        padding: 0.5% 1%;
+        background-color: white;
+        z-index: 20;
+      }
+      .shortcut-bubblot{
+          left: 27.5%;
+          display: none;
+          &.on{
+            display: block;
+          }
+        }
+      .shortcut-pump{
+          left: 41%;
+          display: none;
+          &.on{
+            display: block;
+          }
+        }
+      .shortcut-winder{
+          left: 54.5%;
+          display: none;
+          &.on{
+            display: block;
+          }
+        }
+      .shortcut-map{
+          left: 68%;
+          display: none;
+          &.on{
+            display: block;
+          }
+        }
+}
+.btn-rec-data{
+        right: 19%;
+        position: absolute;
+        top:0%;
+        width: 3%;
+        text-align: center;
+        text-decoration: none;
+        padding: 0.5% 1%;
+        color: gray;
+        border: 5px solid gray;
+        z-index: 10;
+        cursor: pointer;
+        @include border(18px);
+        @include fontUse($fontFamilly, 27px, $fontWeight);
+        text-transform: uppercase;
+        &:hover{
+          color: red;
+          border: 5px solid red;
+        }
+        &.on{
+          color: red;
+          border: 5px solid red;
+        }
+      }
+.alert-winder1, .alert-winder2, .alert-winder3, .alert-winder4, .alert-rail{
+        position: absolute;
+        top:80px;
+        right: 38.5%;
+        width: 7%;
+        text-align: center;
+        padding: 0.5% 1%;
+        line-height: 100%;
+        color: red;
+        text-transform: uppercase;
+        border: 5px solid red;
+        z-index: 20;
+        cursor: pointer;
+        @include border(18px);
+        font-size: 22px;
+        font-family: arial black;
+        pointer-events: none;
+        animation: alertOn 2s infinite;
+        background-color: white;
+    }
+.alert-winder-user{
+      position: absolute;
+      top:80px;
+      right: 38.5%;
+      width: 7%;
+      text-align: center;
+      padding: 0.5% 1%;
+      line-height: 100%;
+      color: red;
+      text-transform: uppercase;
+      border: 5px solid red;
+      z-index: 20;
+      cursor: pointer;
+      @include border(18px);
+      font-size: 22px;
+      font-family: arial black;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.5s linear;
+      background-color: white;
+  }
+    .alert-security-bubblot{
+        position: absolute;
+        top:80px;
+        left: 25%;
+        width: 7%;
+        text-align: center;
+        padding: 0.5% 1%;
+        line-height: 100%;
+        color: red;
+        text-transform: uppercase;
+        border: 5px solid red;
+        z-index: 20;
+        cursor: pointer;
+        @include border(18px);
+        font-size: 22px;
+        font-family: arial black;
+        pointer-events: none;
+        animation: alertOn 2s infinite;
+    }
+    .alert-twist-left, .alert-twist-right{
+        position: absolute;
+        top:80px;
+        left: 25%;
+        width: 7%;
+        text-align: center;
+        padding: 0.5% 1%;
+        line-height: 100%;
+        color: red;
+        text-transform: uppercase;
+        border: 5px solid red;
+        z-index: 20;
+        cursor: pointer;
+        @include border(18px);
+        font-size: 18px;
+        font-family: arial black;
+        pointer-events: none;
+        animation: alertOn 2s infinite;
+    }
+    .alert-pump{
+        top:80px;
+        left: 38.5%;
+        width: 7%;
+        text-align: center;
+        padding: 0.5% 1%;
+        line-height: 100%;
+        color: red;
+        text-transform: uppercase;
+        border: 5px solid red;
+        z-index: 20;
+        cursor: pointer;
+        @include border(18px);
+        font-size: 22px;
+        font-family: arial black;
+        pointer-events: none;
+        animation: alertOn 2s infinite;
+        background-color: white;
+    }
+    .alert-pump-user{
+      position: absolute;
+      top:80px;
+      left: 38.5%;
+      width: 7%;
+      text-align: center;
+      padding: 0.5% 1%;
+      line-height: 100%;
+      color: red;
+      text-transform: uppercase;
+      border: 5px solid red;
+      z-index: 20;
+      cursor: pointer;
+      @include border(18px);
+      font-size: 22px;
+      font-family: arial black;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.5s linear;
+      background-color: white;
+  }
+  // ANIMATION
+@keyframes alertOn {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+     opacity: 0;
+ }
+}
+
+.indicator-mvt {
+   position: absolute;
+   left: 330px;
+   bottom: $marge;
+   width: 120px;
+   height: 120px;
+   background: url('../img/plop/indicator.svg') no-repeat center;
+   .plop {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: tomato;
+      border: 1px solid white;
+      @include border(50%);
+      @include centerItem(50%);
+   }
+}
+
+// --------------------------------------------------------------------------------------------------------------------
+// Cadrans
+// --------------------------------------------------------------------------------------------------------------------
+.cadrans-container {
+   position: absolute;
+   width: $tailleCadranSmall;
+   height: $tailleCadranSmall;
+   overflow: hidden;
+   outline: 0;
+   @include border(12px);
+   transition: left 0.2s, right 0.2s;
+   -webkit-mask-image: -webkit-radial-gradient(circle, white, black);
+   // Cadrans de gauche
+   &.focus-left, &.focus-right {
+      position: absolute;
+      width: $tailleCadranFocus;
+      height: $tailleCadranFocus;
+      bottom: $marge;
+      @include border(22px);
+   }
+   &.focus-left {
+      left: $marge;
+   }
+   &.left-one {
+      top: $marge;
+      left: $marge;
+   }
+   &.left-two {
+      top: $tailleCadranSmall + 2 * $marge;
+      left: $marge;
+   }
+   &.left-three {
+      top: 2 * $tailleCadranSmall + 3 * $marge;
+      left: $marge;
+   }
+   &.left-four {
+      top: 3 * $tailleCadranSmall + 4 * $marge;
+      left: $marge;
+   }
+   &.left-five {
+      top: 4 * $tailleCadranSmall + 5 * $marge;
+      left: $marge;
+   }
+   // Cadrans de droite
+   &.focus-right {
+      right: $marge;
+   }
+   &.right-one {
+      top: $marge;
+      right: $marge;
+   }
+   &.right-two {
+      top: $tailleCadranSmall + 2 * $marge;
+      right: $marge;
+   }
+   &.right-three {
+      top: 2 * $tailleCadranSmall + 3 * $marge;
+      right: $marge;
+   }
+   &.right-four {
+      top: 3 * $tailleCadranSmall + 4 * $marge;
+      right: $marge;
+   }
+   &.right-five {
+      top: 4 * $tailleCadranSmall + 5 * $marge;
+      right: $marge;
+   }
+   &.transition-left {
+      left: -300px;
+   }
+   &.transition-right {
+      right: -300px;
+   }
+
+   .cadran {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 10;
+   }
+}
+
+.cadrans-winder-container {
+    position: absolute;
+    width: $tailleCadranFocus;
+    height: $tailleCadranFocus;
+    @include border(22px);
+    overflow: hidden;
+    outline: 0;
+    transition: left 0.2s, right 0.2s;
+    -webkit-mask-image: -webkit-radial-gradient(circle, white, black);
+    &.middle {
+      @include centerItemX($centerValue);
+      bottom: $marge;
+   }
+   &.left-one {
+      top: 10%;
+      left: $marge;
+   }
+   &.left-two {
+      bottom: 10%;
+      left: $marge;
+   }
+   &.right-one {
+      top: 10%;
+      right: $marge;
+   }
+   &.right-two {
+      bottom: 10%;
+      right: $marge;
+   }
+   .cadran {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 10;
+   }
+}
+
+.rail-counter-container{
+  @include centerItemX(50%);
+  bottom: 30%;
+  width: 10%;
+  height: 8%;
+  background-color: black;
+  display: none;
+  @include border(10px);
+  &.on{
+    display:block;
+  }
+  .rail-counter{
+    @include centerItemY(50%);
+    right: 0;
+    color: #c3f900;
+    letter-spacing:2px;
+    text-align: right;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 55px;
+  }
+}
+.rail-warning{
+  position:absolute;
+  right:40.5%;
+  bottom: 30%;
+  width: 4%;
+  height: 8%;
+  background: url('../img/winderControl/warning.svg') no-repeat center;
+  background-size: 100% 100%;
+  display:none;
+  &.on{
+    display:block;
+  }
+}
+
+
+
+
+

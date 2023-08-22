@@ -1,0 +1,27 @@
+{
+  "name": "vrviewer",
+  "preferGlobal": "true",
+  "version": "0.0.1",
+  "author": "Eric Pascal <eric.pascal@aim-services.ch>",
+  "description": "Native addon for displaying stereo webcams",
+  "main": "lib/vrviewer.js",
+  "scripts": {
+    "test": "node ./vr.js"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "http://subversion.aim-services.ch/git/vrviewer.git"
+  },
+  "keywords": [
+    "native",
+    "vr",
+    "webcam",
+    "addon"
+  ],
+  "gypfile": true,
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "nan": "^2.3.3"
+  }
+}

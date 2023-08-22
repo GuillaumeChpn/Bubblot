@@ -1,0 +1,147 @@
+@import "mixins";
+// Cadran lighting
+
+$margeBtnSmall: 13.3%;
+$margeBtnFocus: 40px;
+
+$widthProgressBarMax: 73.3%;
+$heightProgressBar: 6%;
+$positionXProgressBar: 12.6%;
+$positionYSpotlightProgressBar: 37.3%;
+$positionYFoglightProgressBar: 34%;
+
+$widthProgressBarMaxFocus: 210px;
+$heightProgressBarFocus: 17px;
+$positionXProgressBarFocus: 40px;
+$positionYSpotlightProgressBarFocus: 113px;
+$positionYFoglightProgressBarFocus: 102px;
+
+$progressBarDefault: 75%;
+$progressBarColor: $secondColor;
+
+.lighting {
+
+   .cadran {
+      background: url('../img/lighting/cadran-small.svg') no-repeat center;
+      background-size: 229% 230%;
+   }
+
+   .spotlight-btn, .foglight-btn {
+      @include centerItemX($centerValue);
+      width: 50px;
+      height: 20px;
+      z-index: 10;
+      background: url('../img/lighting/btn-off.svg') no-repeat center;
+      background-size: 70% 100%;
+      pointer-events: none;
+      &.on {
+         background: url('../img/lighting/btn-on.svg') no-repeat center;
+         background-size: 70% 100%;
+      }
+   }
+
+   .spotlight-btn {
+      top: $margeBtnSmall;
+   }
+
+   .foglight-btn {
+      bottom: $margeBtnSmall;
+   }
+
+   .spotlight-progressbar, .foglight-progressbar {
+      position: absolute;
+      width: $widthProgressBarMax;
+      height: $heightProgressBar;
+      left: $positionXProgressBar;
+      z-index: 10;
+      .progress-bar {
+         position: absolute;
+         top: 0;
+         left: 0;
+         bottom: 0;
+         background-color: $progressBarColor;
+      }
+      .selected-drag {
+         position: absolute;
+         top: -2px;
+         width: 5px;
+         height: 14px;
+         opacity: 0;
+         background-color: darken($progressBarColor, 40%);
+         pointer-events: none;
+      }
+   }
+
+   .spotlight-progressbar {
+      top: $positionYSpotlightProgressBar;
+   }
+
+   .foglight-progressbar {
+      bottom: $positionYFoglightProgressBar;
+   }
+
+   &.focus-right {
+
+      .cadran {
+         background: url('../img/lighting/cadran.svg') no-repeat center;
+         background-size: 229% 230%;
+      }
+
+      .spotlight-btn, .foglight-btn {
+         width: 100px;
+         height: 40px;
+         pointer-events: auto;
+         cursor: pointer;
+      }
+      .spotlight-btn {
+         top: $margeBtnFocus;
+      }
+
+      .foglight-btn {
+         bottom: $margeBtnFocus;
+      }
+      .spotlight-progressbar, .foglight-progressbar {
+         width: $widthProgressBarMaxFocus;
+         height: $heightProgressBarFocus;
+         left: $positionXProgressBarFocus;
+         .selected-drag {
+            top: -4px;
+            width: 10px;
+            height: 24px;
+            pointer-events: auto;
+            cursor: pointer;
+         }
+      }
+      .spotlight-progressbar {
+         top: $positionYSpotlightProgressBarFocus;
+      }
+
+      .foglight-progressbar {
+         bottom: $positionYFoglightProgressBarFocus;
+      }
+      .shortcut-lighting{
+        @include centerItemX(50%);
+        @include fontUse($fontFamilly, 18px, $fontWeight);
+        text-align: center;
+        padding: 3.5% 1%;
+        background-color: white;
+        z-index: 20;
+        &.spot{
+            top:27%;
+            display: none;
+            &.on{
+            display: block;
+            }
+        }
+        &.fog{
+            bottom:24%;
+            display: none;
+            &.on{
+            display: block;
+            }
+        }
+      }
+   }
+
+
+}

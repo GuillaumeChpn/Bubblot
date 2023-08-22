@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 595.3 841.9" style="enable-background:new 0 0 595.3 841.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{display:inline;fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+	.st2{fill:#282828;}
+	.st3{fill:#353535;}
+	.st4{fill:#1E1E1E;}
+	.st5{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+	.st6{fill:#FFFFFF;}
+</style>
+<g id="traitPitch" class="st0">
+	<line class="st1" x1="288" y1="396.6" x2="307.7" y2="396.6"/>
+	<line class="st1" x1="288" y1="347.4" x2="307.7" y2="347.4"/>
+	<line class="st1" x1="276.1" y1="371.7" x2="319.6" y2="371.7"/>
+	<line class="st1" x1="276.1" y1="322.5" x2="319.6" y2="322.5"/>
+	<line class="st1" x1="288" y1="445.9" x2="307.7" y2="445.9"/>
+</g>
+<g id="roll">
+	<g id="roll_1_">
+		<polygon class="st2" points="340.8,516.6 319.9,503.5 297.4,503.5 276.8,503.5 255.9,516.6 202.2,516.6 149.7,517 149.8,518.2 
+			199.7,562 219.6,574.8 233.8,579.5 251,585.7 273.2,590 286.9,590.8 297.4,590.8 309.9,590.8 323.6,590 345.7,585.7 363,579.5 
+			377.1,574.8 397.1,562 420.7,544.5 448.9,516.6 393.7,516.6 		"/>
+	</g>
+</g>
+<g id="contourCadran">
+	<path class="st3" d="M451.8,235.9H144.2c-17.1,0-31.2,14-31.2,31.2v307.6c0,17.1,14,31.2,31.2,31.2h307.6c17.1,0,31.2-14,31.2-31.2
+		V267.1C483,249.9,469,235.9,451.8,235.9z M298,587.7c-92.1,0-166.8-74.7-166.8-166.8S205.9,254.1,298,254.1s166.8,74.7,166.8,166.8
+		S390.1,587.7,298,587.7z"/>
+</g>
+<g id="logo_1_">
+	<g>
+		<circle id="Fond" class="st4" cx="143.7" cy="266.4" r="21.9"/>
+		<g>
+			<path class="st5" d="M132.2,279.4c0-2.2,2.5-12.8,11.5-12.8s11.6-9.7,11.6-12.3"/>
+			<rect x="135.7" y="254.4" class="st6" width="7" height="25.1"/>
+			<rect x="144.7" y="254.4" class="st6" width="7" height="25.1"/>
+		</g>
+	</g>
+</g>
+<g id="logo_-_copie">
+	<g>
+		<circle id="Fond_1_" class="st4" cx="452.3" cy="266.4" r="21.9"/>
+		<g>
+			<path class="st5" d="M440.7,279.4c0-2.2,2.5-12.8,11.5-12.8s11.6-9.7,11.6-12.3"/>
+			<rect x="444.3" y="254.4" class="st6" width="7" height="25.1"/>
+			<rect x="453.3" y="254.4" class="st6" width="7" height="25.1"/>
+		</g>
+	</g>
+</g>
+<g id="logo_-_copie_2">
+	<g>
+		<circle id="Fond_2_" class="st4" cx="452.3" cy="574.9" r="21.9"/>
+		<g>
+			<path class="st5" d="M440.7,588c0-2.2,2.5-12.8,11.5-12.8s11.6-9.7,11.6-12.3"/>
+			<rect x="444.3" y="562.9" class="st6" width="7" height="25.1"/>
+			<rect x="453.3" y="562.9" class="st6" width="7" height="25.1"/>
+		</g>
+	</g>
+</g>
+<g id="logo_-_copie_3">
+	<g>
+		<circle id="Fond_3_" class="st4" cx="143.6" cy="574.9" r="21.9"/>
+		<g>
+			<path class="st5" d="M132,588c0-2.2,2.5-12.8,11.5-12.8c9,0,11.6-9.7,11.6-12.3"/>
+			<rect x="135.6" y="562.9" class="st6" width="7" height="25.1"/>
+			<rect x="144.6" y="562.9" class="st6" width="7" height="25.1"/>
+		</g>
+	</g>
+</g>
+<g id="reperes" class="st0">
+</g>
+</svg>

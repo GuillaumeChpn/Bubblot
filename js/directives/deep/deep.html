@@ -1,0 +1,63 @@
+<div id="deep" class="cadrans-container deep">
+    <div class="cadran"></div>
+    <div class="progress-pie"></div>
+    <form class="main-cursor-container">
+        <table>
+            <tr style="height:80%">
+                <td style="width:33%">
+                    <div class="progress-bar-pressure" style="background: linear-gradient(red, yellow, Lime ,yellow, red);">
+                        <div class="cursor-container-pressure">
+                            <div class="cursor" style="top: {{100-security}}%;"></div>
+                        </div>
+                    </div>
+                </td>
+                <td style="width:33%">
+                    <div class="btn-ballast up" ng-click="ballastFill = !ballastFill;ballastEmpty = false"></div>
+                    <div class="progress-bar-ballast">
+                        <div class="cursor-container-ballast">
+                            <div class="cursor" style=" top: {{100-ballastState}}%;"></div>
+                        </div>
+                    </div>
+                    <div class="btn-ballast down" ng-click="ballastEmpty = true;ballastFill = false;"></div>
+                </td>
+                <td style="width:33%">
+                    <div class="progress-bar-pressure">
+                        <div class="cursor-container-pressure">
+                            <div class="cursor" style="top: {{sonarDistance}}%;"></div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr style="height:20%">
+                <td>
+                    <div class="third-container">ΔP</div>
+                </td>
+                <td>
+                    <div class="third-container">B</div>
+                </td>
+                <td>
+                    <div class="third-container">D</div>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <!--
+    <div class="security-progressbar">
+        <div class="progress-bar" id="progress-bar-spot-security"></div>
+        <div class="indicateur" style="background: black; top: {{100-security}}%;"></div>
+    </div>
+    <div class="sonar-progressbar">
+        <div class="progress-bar" id="progress-bar-spot-sonar"></div>
+        <div class="indicateur" id="indicateur-sonar" style="background: black; top: {{100-sonarDistance}}%;"></div>
+    </div>
+    <div class="ballast-progressbar">
+        <div class="progress-bar" id="progress-bar-spot-ballast"></div>
+        <div class="indicateur" style="background: black; top: {{100-ballastState}}%;"></div>
+    </div>
+    <div class="btn-ballast up" ng-click="ballastFill = !ballastFill;ballastEmpty = false"></div>
+    <div class="btn-ballast down" ng-click="ballastEmpty = true;ballastFill = false;"></div>
+    <div class="led-security" ng-class="{error:securityAlert}">S </div>
+    -->
+    <circle-progress value="depth" circle-size="circleSize" circle-thickness="circleThickness" circle-ratio="0.75"
+        circle-color=0 />
+</div>

@@ -1,0 +1,16 @@
+<div id="lighting" class="cadrans-container lighting">
+    <div class="cadran"></div>
+    <div class="spotlight-btn" ng-class="{on:spotlightSwitchOn}" ng-click="spotlightSwitchOnFunction()">
+    </div>
+    <div class="foglight-btn" ng-class="{on:foglightSwitchOn}" ng-click="foglightSwitchOnFunction()"></div>
+    <div class="spotlight-progressbar">
+        <div class="progress-bar" style="width: {{spotlightSwitchOn?spotlightIntensity:0}}%"></div>
+        <div class="selected-drag" style="left: {{spotlightSwitchOn?spotlightIntensity:0}}%;opacity: {{spotlightSwitchOn?1:0}}" draggable position="spotlightIntensity"></div>
+    </div>
+    <div class="foglight-progressbar">
+        <div class="progress-bar" style="width: {{foglightSwitchOn?foglightIntensity:0}}%"></div>
+        <div class="selected-drag" style="left: {{foglightSwitchOn?foglightIntensity:0}}%;opacity: {{foglightSwitchOn?1:0}}" draggable position="foglightIntensity"></div>
+    </div>
+    <p class="shortcut-lighting spot" ng-class="{on:help}">Scroll</p>
+    <p class="shortcut-lighting fog" ng-class="{on:help}">Scroll</p>
+</div>

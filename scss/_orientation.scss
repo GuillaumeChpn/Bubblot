@@ -1,0 +1,83 @@
+@import "mixins";
+// Cadran Orientation
+.orientation {
+
+   .cadran {
+      background: url('../img/orientation/cadran.svg') no-repeat center;
+      background-size: 229% 230%;
+   }
+
+   .horizon-container {
+      @include centerItem(50%);
+      width: 290px;
+      height: 290px;
+      @include border(20px);
+      z-index: 1;
+      .horizon {
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         background-size: 100% 100%;
+         background: url('../img/orientation/horizon.svg') no-repeat center;
+         transition-duration: 0.3s;
+         transition-timing-function: linear;
+      }
+   }
+   .btn-reset-horizon{
+       @include centerItemX(50%);
+        bottom: 14px;
+        padding: 3px 6px;
+        color:gray;
+        text-transform: uppercase;
+        border: 1px solid gray;
+        z-index: 12;
+        cursor: pointer;
+        @include border(3px);
+        @include fontUse($fontFamilly, 9px, bolder);
+        pointer-events: none;
+   }
+   .twist-left, .twist-right{
+       @include centerItemX(50%);
+       top: 16%;
+       z-index: 12;
+       background-size: 100% 100%;
+       width: 40%;
+       height: 40%;
+       display: none;
+       &.on{
+           display:block;
+       }
+   }
+   .twist-left{
+       background: url('../img/orientation/Twist_Left_02.svg') no-repeat center;
+   }
+   .twist-right{
+       background: url('../img/orientation/Twist_Right_02.svg') no-repeat center;
+   }
+   &.focus-left {
+      .horizon-container {
+         width: 560px;
+         height: 560px;
+      }
+    .pitch {
+        position: absolute;
+        bottom: 32px;
+        left: 114px;
+        color: red;
+        z-index: 10;
+    }
+    .roll {
+        position: absolute;
+        bottom: 32px;
+        right: 110px;
+        color: red;
+        z-index: 10;
+    }
+    .btn-reset-horizon{
+            bottom: 27px;
+            font-size: 25px;
+            pointer-events: auto;
+            cursor: pointer;
+    }
+   }
+}

@@ -1,0 +1,231 @@
+@import "mixins";
+// Cadran Direction
+
+$heightBubblot:15px;
+$heightBubblotFocus:22px;
+$colorBubblotFocus: rgb(40, 125, 5);
+$colorBubblot: rgb(74, 191, 235);
+
+$colorStorage: rgba(109, 117, 117, 0.3);
+
+$heightBtnReset:20px;
+$heightBtnResetFocus:40px;
+$positionBtnReset: 5px;
+$positionBtnResetFocus: $positionBtnReset;
+
+$widthBubblotDirection: 8px 0 7px 20px;
+$marginLeftBubblotDirection: 7px;
+
+$widthBubblotDirectionFocus: 11px 0 11px 30px;
+$marginLeftBubblotDirectionFocus: 8px;
+
+.direction {
+
+   .cadran {
+      background: url('../img/direction/cadran2.svg') no-repeat center;
+      background-size: 229% 230%;
+   }
+   .north-container {
+      @include centerItem(50%);
+      width: 92%;
+      height: 92%;
+      @include border(20px);
+      background: radial-gradient(#dcffab, #b7d685);
+      z-index: 1;
+      .north {
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         background-size: 100% 100%;
+         background: url('../img/direction/mire.svg') no-repeat center;
+      }
+   }
+   .zone-stockage {
+      border-bottom: 46px solid $colorStorage;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      height: 43.3%;
+      width: 10%;
+      z-index: 2;
+      position: absolute;
+      top: 12%;
+      left: 40%;
+   }
+
+   .bubblot {
+      position:absolute;
+      width: $heightBubblot;
+      height: $heightBubblot;
+      text-align: center;
+      line-height: $heightBubblot;
+      color: white;
+      background-color: $colorBubblot;
+      z-index: 4;
+      @include border(50%);
+      @include fontUse($fontFamilly, 8px, $fontWeight);
+      &.focus {
+         background-color: $colorBubblotFocus;
+      }
+      &.b1 {
+         top: 31.3%;
+         left: 21.3%;
+      }
+      &.b2 {
+         top: 18%;
+         left: 61.3%;
+      }
+      &.b3 {
+         top: 58%;
+         left: 54.6%;
+      }
+   }
+
+   .bubblot-direction {
+      position: absolute;
+      width: $heightBubblot;
+      height: $heightBubblot;
+      z-index: 3;
+      @include timeAnimation($timeAnimation);
+      .arrow-direction {
+         width: $heightBubblot * 2;
+         height: $heightBubblot * 2;
+         background: url('../img/direction/arrow.svg') no-repeat center;
+         @include centerItem(50%);
+      }
+      &.b1 {
+         top: 31.3%;
+         left: 21.3%;
+      }
+      &.b2 {
+         top: 18%;
+         left: 61.3%;
+      }
+      &.b3 {
+         top: 58%;
+         left: 54.6%;
+      }
+   }
+
+   .btn-nord, .btn-stockage {
+      position: absolute;
+      width: $heightBtnReset;
+      height: $heightBtnReset;
+      top: $positionBtnReset;
+      text-align: center;
+      line-height: $heightBtnReset;
+      background-color: $secondColor;
+      color: white;
+      z-index: 5;
+      @include fontUse($fontFamilly, 12px, $fontWeight);
+      @include border(50%);
+   }
+
+   .btn-nord {
+      left: $positionBtnReset;
+   }
+
+   .btn-stockage {
+      right: $positionBtnReset;
+   }
+
+   &.focus-right {
+
+      .north-container {
+         width: 274px;
+         height: 273px;
+      }
+
+      .zone-stockage {
+         border-bottom: 90px solid rgba(109, 117, 117, 0.3);
+         border-left: 28px solid transparent;
+         border-right: 28px solid transparent;
+         height: 20px;
+         width: 15px;
+         z-index: 2;
+         position: absolute;
+         top: 149px;
+         left: 114px;
+         transform-origin: top;
+      }
+
+      .bubblot {
+         width: $heightBubblotFocus;
+         height: $heightBubblotFocus;
+         line-height: $heightBubblotFocus;
+         @include fontUse($fontFamilly, 12px, $fontWeight);
+         &.b1 {
+            top: 100px;
+            left: 82px;
+         }
+         &.b2 {
+            top: 74px;
+            left: 182px;
+         }
+         &.b3 {
+            top: 180px;
+            left: 162px;
+         }
+      }
+
+      .bubblot-direction {
+         width: $heightBubblotFocus;
+         height: $heightBubblotFocus;
+         .arrow-direction {
+            width: $heightBubblotFocus * 2;
+            height: $heightBubblotFocus * 2;
+         }
+         &.b1 {
+            top: 100px;
+            left: 82px;
+         }
+         &.b2 {
+            top: 74px;
+            left: 182px;
+         }
+         &.b3 {
+            top: 180px;
+            left: 162px;
+         }
+      }
+
+      .btn-nord, .btn-stockage {
+        z-index: 15;
+         width: $heightBtnResetFocus;
+         height: $heightBtnResetFocus;
+         line-height: $heightBtnResetFocus;
+         top: $positionBtnResetFocus;
+         @include fontUse($fontFamilly, 20px, $fontWeight);
+      }
+
+      .btn-nord {
+         left: $positionBtnResetFocus;
+      }
+
+      .btn-stockage {
+         right: $positionBtnResetFocus;
+      }
+      .shortcut-direction{
+        position: absolute;
+        top: 36%;
+        @include fontUse($fontFamilly, 18px, $fontWeight);
+        text-align: center;
+        padding: 3.5% 1%;
+        background-color: white;
+        z-index: 20;
+        &.north{
+            left:10%;
+            display: none;
+            &.on{
+            display: block;
+            }
+        }
+        &.storage{
+            right:10%;
+            display: none;
+            &.on{
+            display: block;
+            }
+        }
+      }
+   }
+}

@@ -1,0 +1,106 @@
+<HTML>
+<HEAD>
+<STYLE TYPE="text/css">
+<!--
+TD,TH,H1,H2,H3,H4,H5,H6,blockquote,P,UL,B,I,DIR {font-family: "Arial, Helvetica"; color: black; font-size: 15; text-decoration: none;}
+A, A:ACTIVE, A:LINK, A:VISITED, A:HOVER {font-family: "Arial , Helvetica"; color: black; font-size: 15; text-decoration: none;}
+-->
+</STYLE>
+<META NAME="generator" CONTENT="TellWATCH 2014 ">
+<TITLE>PumpGpsCompasBackGround</TITLE>
+<SCRIPT LANGUAGE="JavaScript1.2"><!--
+/*
+ * Cette fonction modifie la vue du dessin SVG.
+ * Elle est apellee en selectionnant une entree du browser.
+ *
+ * Input Parameters:
+ *   view         - Zone a visualiser
+ *   parts        - Identification de la piece
+ *   name         - Nom de la piece
+ */
+  var old_parts;
+  var old_icon;
+
+  function view_elem (view,parts,name)
+  {
+    var svgobj_zoom;
+    var svgobj_sym;
+    var svgobj_sym_zoom;
+    var svgobj_sym_old;
+    var svgobj_sym_old_zoom;
+    var svgstyle_sym;
+    var svgstyle_sym_zoom;
+    var svgstyle_sym_old;
+    var svgstyle_sym_old_zoom;
+    var svgdoc_zoom = top.zoom.document.PumpGpsCompasBezel_zoom.getSVGDocument();
+    var svgdoc_main = top.svg.document.PumpGpsCompasBezel.getSVGDocument();
+
+    top.zoom.document.name_symbole.name.value = name;
+
+    svgdoc_zoom.documentElement.setAttribute("viewBox",view);
+
+    if (old_parts)
+    {
+      top.form.document[old_parts].src = old_icon;
+
+      svgobj_sym_old = svgdoc_main.getElementById(old_parts);
+      svgobj_sym_old_zoom = svgdoc_zoom.getElementById(old_parts);
+
+      svgstyle_sym_old = svgobj_sym_old.getStyle();
+      svgstyle_sym_old_zoom = svgobj_sym_old_zoom.getStyle();
+
+      svgstyle_sym_old.setProperty('stroke-opacity','none');
+      svgstyle_sym_old.setProperty('fill-opacity','none');
+
+      svgstyle_sym_old_zoom.setProperty('stroke-opacity','none');
+      svgstyle_sym_old_zoom.setProperty('fill-opacity','none');
+    }
+
+    old_icon = top.form.document[parts].src;
+
+    if ( top.form.document[parts].src.match(/SvgPartsOpenOff/) )
+    {
+        top.form.document[parts].src = "SvgPartsOpenOn.gif";
+    }
+    if ( top.form.document[parts].src.match(/SvgPartsOff/) )
+    {
+        top.form.document[parts].src = "SvgPartsOn.gif";
+    }
+    if ( top.form.document[parts].src.match(/SvgDrawingOff/) )
+    {
+        top.form.document[parts].src = "SvgDrawingOn.gif";
+    }
+
+    svgobj_sym = svgdoc_main.getElementById(parts);
+    svgobj_sym_zoom = svgdoc_zoom.getElementById(parts);
+
+    svgstyle_sym = svgobj_sym.getStyle();
+    svgstyle_sym_zoom = svgobj_sym_zoom.getStyle();
+
+    svgstyle_sym.setProperty('stroke-opacity','1');
+    svgstyle_sym.setProperty('fill-opacity','1');
+
+    svgstyle_sym_zoom.setProperty('stroke-opacity','1');
+    svgstyle_sym_zoom.setProperty('fill-opacity','1');
+
+    old_parts = parts;
+
+  }
+// -->
+</SCRIPT>
+<BODY TEXT="#000000" BGCOLOR="#CCCCCC">
+<TABLE WIDTH=258 BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR><TD WIDTH=1%><A HREF="javascript:view_elem('0 0 61.2 61.2','parts0000','PumpGpsCompasBackGround.tldz')"><IMG BORDER=0 WIDTH=19 HEIGHT=17 SRC="SvgDrawingOff.gif" NAME="parts0000"></A><TD WIDTH=277 COLSPAN=3><A HREF="javascript:view_elem('0 0 61.2 61.2','parts0000','PumpGpsCompasBackGround.tldz')">&nbsp;PumpGpsCompasBackGround.tldz</A>
+<TR><TD WIDTH=1%><IMG BORDER=0 WIDTH=19 HEIGHT=17 SRC="SvgFolder2.gif"><TD WIDTH=1%><A HREF="javascript:view_elem('-0.6 -0.6 62.4 62.4','parts0001','Lunette')"><IMG BORDER=0 WIDTH=19 HEIGHT=17 SRC="SvgPartsOff.gif" NAME="parts0001"></A><TD WIDTH=258 COLSPAN=2><A HREF="javascript:view_elem('-0.6 -0.6 62.4 62.4','parts0001','Lunette')">&nbsp;Lunette</A>
+<TR><TD WIDTH=1%><IMG BORDER=0 WIDTH=19 HEIGHT=17 SRC="SvgFolder2.gif"><TD WIDTH=1%><A HREF="javascript:view_elem('1.856 1.856 7.488 7.488','parts0002','Vis H')"><IMG BORDER=0 WIDTH=19 HEIGHT=17 SRC="SvgPartsOpenOff.gif" NAME="parts0002"></A><TD WIDTH=258 COLSPAN=2><A HREF="javascript:view_elem('1.856 1.856 7.488 7.488','parts0002','Vis H')">&nbsp;Vis H</A>
+<TR><TD WIDTH=1%><IMG BORDER=0 WIDTH=19 HEIGHT=17 SRC="SvgFolder1.gif"><TD WIDTH=1%><IMG BORDER=0 WIDTH=19 HEIGHT=17 SRC="SvgFolder3.gif"><TD WIDTH=1%><A HREF="javascript:view_elem('3.52 3.52 4.16 4.16','parts0003','H')"><IMG BORDER=0 WIDTH=19 HEIGHT=17 SRC="SvgPartsOff.gif" NAME="parts0003"></A><TD WIDTH=220><A HREF="javascript:view_elem('3.52 3.52 4.16 4.16','parts0003','H')">&nbsp;H</A>
+<TR><TD WIDTH=1%><IMG BORDER=0 WIDTH=19 HEIGHT=17 SRC="SvgFolder2.gif"><TD WIDTH=1%><A HREF="javascript:view_elem('1.856 51.856 7.488 7.488','parts0004','Vis H')"><IMG BORDER=0 WIDTH=19 HEIGHT=17 SRC="SvgPartsOpenOff.gif" NAME="parts0004"></A><TD WIDTH=258 COLSPAN=2><A HREF="javascript:view_elem('1.856 51.856 7.488 7.488','parts0004','Vis H')">&nbsp;Vis H</A>
+<TR><TD WIDTH=1%><IMG BORDER=0 WIDTH=19 HEIGHT=17 SRC="SvgFolder1.gif"><TD WIDTH=1%><IMG BORDER=0 WIDTH=19 HEIGHT=17 SRC="SvgFolder3.gif"><TD WIDTH=1%><A HREF="javascript:view_elem('3.52 53.52 4.16 4.16','parts0005','H')"><IMG BORDER=0 WIDTH=19 HEIGHT=17 SRC="SvgPartsOff.gif" NAME="parts0005"></A><TD WIDTH=220><A HREF="javascript:view_elem('3.52 53.52 4.16 4.16','parts0005','H')">&nbsp;H</A>
+<TR><TD WIDTH=1%><IMG BORDER=0 WIDTH=19 HEIGHT=17 SRC="SvgFolder2.gif"><TD WIDTH=1%><A HREF="javascript:view_elem('51.856 51.856 7.488 7.488','parts0006','Vis H')"><IMG BORDER=0 WIDTH=19 HEIGHT=17 SRC="SvgPartsOpenOff.gif" NAME="parts0006"></A><TD WIDTH=258 COLSPAN=2><A HREF="javascript:view_elem('51.856 51.856 7.488 7.488','parts0006','Vis H')">&nbsp;Vis H</A>
+<TR><TD WIDTH=1%><IMG BORDER=0 WIDTH=19 HEIGHT=17 SRC="SvgFolder1.gif"><TD WIDTH=1%><IMG BORDER=0 WIDTH=19 HEIGHT=17 SRC="SvgFolder3.gif"><TD WIDTH=1%><A HREF="javascript:view_elem('53.52 53.52 4.16 4.16','parts0007','H')"><IMG BORDER=0 WIDTH=19 HEIGHT=17 SRC="SvgPartsOff.gif" NAME="parts0007"></A><TD WIDTH=220><A HREF="javascript:view_elem('53.52 53.52 4.16 4.16','parts0007','H')">&nbsp;H</A>
+<TR><TD WIDTH=1%><IMG BORDER=0 WIDTH=19 HEIGHT=17 SRC="SvgFolder3.gif"><TD WIDTH=1%><A HREF="javascript:view_elem('51.856 1.856 7.488 7.488','parts0008','Vis H')"><IMG BORDER=0 WIDTH=19 HEIGHT=17 SRC="SvgPartsOpenOff.gif" NAME="parts0008"></A><TD WIDTH=258 COLSPAN=2><A HREF="javascript:view_elem('51.856 1.856 7.488 7.488','parts0008','Vis H')">&nbsp;Vis H</A>
+<TR><TD WIDTH=1%>&nbsp;<TD WIDTH=1%><IMG BORDER=0 WIDTH=19 HEIGHT=17 SRC="SvgFolder3.gif"><TD WIDTH=1%><A HREF="javascript:view_elem('53.52 3.52 4.16 4.16','parts0009','H')"><IMG BORDER=0 WIDTH=19 HEIGHT=17 SRC="SvgPartsOff.gif" NAME="parts0009"></A><TD WIDTH=220><A HREF="javascript:view_elem('53.52 3.52 4.16 4.16','parts0009','H')">&nbsp;H</A>
+</TABLE>
+</BODY>
+
+</HTML>

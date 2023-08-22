@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="194 -293 595.3 841.9" style="enable-background:new 194 -293 595.3 841.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{display:inline;}
+	.st2{fill:#0F6B84;}
+	.st3{fill:#82531A;}
+	.st4{display:inline;fill:#7C7C7C;}
+	.st5{display:inline;fill:none;stroke:#000000;stroke-width:4;stroke-miterlimit:10;}
+	.st6{display:inline;fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st7{fill:#282828;}
+	.st8{fill:#FFFFFF;}
+	.st9{font-family:'Arial'; font-weight:bold;}
+	.st10{font-size:20px;}
+	.st11{fill:none;stroke:#282828;stroke-width:2;stroke-miterlimit:10;}
+	.st12{fill:none;}
+	.st13{fill:#353535;}
+	.st14{fill:#1E1E1E;}
+	.st15{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+</style>
+<g id="masque_1_" class="st0">
+	<g class="st1">
+		<path class="st2" d="M954.5-712.6c76,0,137.6,61.3,138.2,137.2h33.6c0-94.6-76.7-171.2-171.2-171.2s-171.2,76.7-171.2,171.2h32.5
+			C816.9-651.4,878.5-712.6,954.5-712.6z"/>
+		<path class="st3" d="M1092.7-575.4c0,76.3-61.9,138.2-138.2,138.2s-138.2-61.9-138.2-138.2c0-0.1,0-0.1,0-0.2h-32.5
+			c0,94.6,76.7,171.2,171.2,171.2s171.2-76.7,171.2-171.2h-33.6C1092.7-575.5,1092.7-575.5,1092.7-575.4z"/>
+	</g>
+	<g id="Calque_19" class="st1">
+	</g>
+</g>
+<g id="Calque_11" class="st0">
+	<circle class="st4" cx="955" cy="-574.4" r="139.2"/>
+</g>
+<g id="diagonaleGros" class="st0">
+	<line class="st5" x1="857.5" y1="-476.6" x2="1065.5" y2="-684.6"/>
+	<line class="st5" x1="846.5" y1="-684.6" x2="1054.7" y2="-476.3"/>
+	<line class="st5" x1="801.6" y1="-575.1" x2="1109.3" y2="-575.1"/>
+	<line class="st5" x1="956.5" y1="-435.6" x2="956.5" y2="-729.8"/>
+</g>
+<g id="diagonalePtit" class="st0">
+	<line class="st6" x1="956" y1="-729.5" x2="956" y2="-713.6"/>
+	<line class="st6" x1="1016.3" y1="-717.2" x2="1009.8" y2="-701.9"/>
+	<line class="st6" x1="895.7" y1="-717.2" x2="901.7" y2="-703"/>
+	<line class="st6" x1="1083.6" y1="-521" x2="1098" y2="-514.9"/>
+	<line class="st6" x1="1083" y1="-629.1" x2="1098" y2="-635.5"/>
+	<line class="st6" x1="814" y1="-635.5" x2="827.3" y2="-629.9"/>
+	<line class="st6" x1="814" y1="-514.9" x2="827.1" y2="-520.5"/>
+</g>
+<g id="Calque_15" class="st0">
+	<circle class="st4" cx="956" cy="-575.1" r="173.5"/>
+</g>
+<g id="roll">
+	<g>
+		<polyline class="st7" points="449.5,255.7 353,255.7 369.8,283.6 393.3,301.1 409.2,299.5 422.3,299.5 444.6,302.3 466.8,306.6 
+			480.5,307.4 491,307.4 491.6,255.4 		"/>
+		<polyline class="st7" points="534.5,255.7 631,255.7 614.3,283.6 590.8,301.1 574.5,302.3 567.8,303.9 554.5,306.3 533.5,306.6 
+			515.8,307.4 489.6,307.4 490.6,255.4 		"/>
+	</g>
+	<polygon class="st7" points="411.5,280.4 571.1,280.4 556,229.9 425.9,229.9 	"/>
+</g>
+<g id="indicateurs">
+	<g id="indicateurs_1_">
+		<text transform="matrix(1 0 0 1 451.3768 266.7821)" class="st8 st9 st10">3D VIEW</text>
+	</g>
+	<line class="st11" x1="481.6" y1="63.7" x2="501.3" y2="63.7"/>
+	<line class="st11" x1="481.6" y1="14.5" x2="501.3" y2="14.5"/>
+	<line class="st11" x1="469.8" y1="38.8" x2="513.2" y2="38.8"/>
+	<line class="st11" x1="469.8" y1="-10.4" x2="513.2" y2="-10.4"/>
+	<line class="st11" x1="481.6" y1="113" x2="501.3" y2="113"/>
+	<line class="st11" x1="469.8" y1="88.8" x2="513.2" y2="88.8"/>
+	<line class="st11" x1="481.6" y1="163.5" x2="501.3" y2="163.5"/>
+	<line class="st11" x1="469.8" y1="138.6" x2="513.2" y2="138.6"/>
+	<line class="st11" x1="469.8" y1="190.6" x2="513.2" y2="190.6"/>
+</g>
+<g id="Calque_17">
+</g>
+<g id="Calque_13">
+	<line class="st12" x1="391.6" y1="226.3" x2="398" y2="203.7"/>
+</g>
+<g id="contourCadran">
+	<path class="st13" d="M645.5-57H337.8c-17.1,0-31.2,14-31.2,31.2v307.6c0,17.1,14,31.2,31.2,31.2h307.6c17.1,0,31.2-14,31.2-31.2
+		V-25.8C676.6-43,662.6-57,645.5-57z M491.6,294.8c-92.1,0-166.8-74.7-166.8-166.8S399.5-38.8,491.6-38.8S658.5,35.9,658.5,128
+		S583.8,294.8,491.6,294.8z"/>
+</g>
+<g id="logo_1_">
+	<g>
+		<circle id="Fond" class="st14" cx="337.3" cy="-26.5" r="21.9"/>
+		<g>
+			<path class="st15" d="M325.8-13.5c0-2.2,2.5-12.8,11.5-12.8s11.6-9.7,11.6-12.3"/>
+			<rect x="329.3" y="-38.5" class="st8" width="7" height="25.1"/>
+			<rect x="338.3" y="-38.5" class="st8" width="7" height="25.1"/>
+		</g>
+	</g>
+</g>
+<g id="logo_-_copie">
+	<g>
+		<circle id="Fond_1_" class="st14" cx="646" cy="-26.5" r="21.9"/>
+		<g>
+			<path class="st15" d="M634.3-13.5c0-2.2,2.5-12.8,11.5-12.8s11.6-9.7,11.6-12.3"/>
+			<rect x="638" y="-38.5" class="st8" width="7" height="25.1"/>
+			<rect x="647" y="-38.5" class="st8" width="7" height="25.1"/>
+		</g>
+	</g>
+</g>
+<g id="logo_-_copie_2">
+	<g>
+		<circle id="Fond_2_" class="st14" cx="646" cy="282" r="21.9"/>
+		<g>
+			<path class="st15" d="M634.3,295.1c0-2.2,2.5-12.8,11.5-12.8s11.6-9.7,11.6-12.3"/>
+			<rect x="638" y="270" class="st8" width="7" height="25.1"/>
+			<rect x="647" y="270" class="st8" width="7" height="25.1"/>
+		</g>
+	</g>
+</g>
+<g id="logo_-_copie_3">
+	<g>
+		<circle id="Fond_3_" class="st14" cx="337.2" cy="282" r="21.9"/>
+		<g>
+			<path class="st15" d="M325.6,295.1c0-2.2,2.5-12.8,11.5-12.8s11.6-9.7,11.6-12.3"/>
+			<rect x="329.2" y="270" class="st8" width="7" height="25.1"/>
+			<rect x="338.2" y="270" class="st8" width="7" height="25.1"/>
+		</g>
+	</g>
+</g>
+<g id="Calque_14">
+</g>
+<g id="reperes" class="st0">
+</g>
+</svg>

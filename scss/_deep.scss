@@ -1,0 +1,143 @@
+@import "mixins";
+// Cadran Deep
+
+$colorProgressPie: $secondColor;
+$colorProgressOk: $mainColor;
+$bgcProgressBar: #a2bf6a;
+$colorLedSecuOk: #a2bf6a;
+$colorLedSecuError: red;
+$colorBtnBallast: #a2bf6a;
+
+$widthProgressBarMax: 50%;
+$heightProgressBar: 6%;
+$positionYProgressBar: 26.6%;
+$positionXSpotlightProgressBar: 35%;
+$positionXFoglightProgressBar: $positionXSpotlightProgressBar;
+$heightLedSecu: 15px;
+$positionXLedSecu: 45px;
+$positionYLedSecu: 20px;
+
+$widthProgressBarMaxFocus: 120px;
+$heightProgressBarFocus: 15px;
+$positionYProgressBarFocus: 25%;
+$positionXSpotlightProgressBarFocus: 40%;
+$heightLedSecuFocus: 25px;
+$positionXLedSecuFocus: 85px;
+$positionYLedSecuFocus: 40px;
+$positionXFoglightProgressBarFocus: $positionXSpotlightProgressBarFocus;
+
+$progressBarDefault: 75%;
+$progressBarColor: $secondColor;
+
+.deep {
+  .cadran {
+    background: url("../img/deep/cadran.svg") no-repeat center;
+    background-size: 229% 230%;
+  }
+
+  .progress-pie {
+    width: 100%;
+    height: 100%;
+    background-color: $colorProgressPie;
+    @include centerItem($centerValue);
+    z-index: 2;
+  }
+
+  .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  }
+  .main-cursor-container {
+    @include centerItemX($centerValue);
+    top: 20%;
+    width: 38%;
+    height: 54%;
+    margin: auto;
+    z-index: 11;
+    table {
+      width: 100%;
+      height: 100%;
+      td {
+        .progress-bar-pressure {
+          width: $widthProgressBarMax;
+          height: 100%;
+          background-color: $progressBarColor;
+          margin: 0 auto;
+          .cursor-container-pressure {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 85%;
+            width: 160%;
+            .cursor {
+              position: relative;
+              width: 100%;
+              height: 18%;
+              background-color: black;
+              @include border(20%);
+            }
+          }
+        }
+        .progress-bar-ballast{
+          width: $widthProgressBarMax;
+          height: 70%;
+          background-color: $progressBarColor;
+          margin: auto;
+          .cursor-container-ballast {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 77%;
+            width: 160%;
+            .cursor {
+              position: relative;
+              width: 100%;
+              height: 29%;
+              background-color: black;
+              @include border(20%);
+            }
+          }
+        }
+        .btn-ballast {
+          width: 80%;
+          height: 15%;
+          background: url("../img/deep/arrow-simple-down.svg") no-repeat center;
+          background-size: 100% 100%;
+          background-color: grey;
+          @include border(20%);
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%);
+          cursor: pointer;
+          &.up {
+          }
+          &.down {
+          }
+        }
+        .third-container {
+          text-align: center;
+          font-weight: bold;
+          display:none;
+        }
+      }
+    }
+  }
+  &.focus-right {
+    .cadran {
+      background: url("../img/deep/cadran.svg") no-repeat center;
+      background-size: 229% 230%;
+    }
+    .main-cursor-container {
+      table {
+        td{
+          .third-container {
+            display:block;
+          }
+        }
+      }
+    }
+  }
+}

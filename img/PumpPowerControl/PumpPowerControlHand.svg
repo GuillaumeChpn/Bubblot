@@ -1,0 +1,41 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg" id="svg" width="100%" height="100%" viewBox="0 0 1.82215 8.19138" style=" fill:none; fill-rule:evenodd; stroke-linecap:round; stroke-linejoin:round; stroke:#ffff00; stroke-width:0.2;">
+<desc>PumpPowerControlHand</desc>
+<rect x="-2.73046" y="-2.73046" width="7.28308" height="13.6523" color-rendering="optimizeSpeed" style=" fill:none; stroke:none; fill-opacity:100;" />
+<g id="parts0000">
+<g id="parts0001" onclick="view_parts('-0.0803077 -0.0803077 1.98277 8.352','parts0001','Aiguille')">
+<radialGradient id="grd4" spreadMethod="pad" gradientUnits="objectBoundingBox" cx="0.31" cy="0.59" r="0.5" fx="0.31" fy="0.59">
+<stop offset="0" style="stop-color:#000000"/>
+<stop offset="1" style="stop-color:#000000"/>
+</radialGradient>
+<path d="M0.288,0.556834L0.876462,0.0803077L0.945692,0.0803077L1.53415,0.556834L1.53415,6.73081
+A0.830769,0.830769 0 1,1 0.288,6.73081 L0.288,0.556834M0.876462,1.11877L0.945692,1.11877
+L1.28492,1.39347L1.28492,4.37262L0.537231,4.37262L0.537231,1.39347L0.876462,1.11877
+M0.537231,6.24185L1.28492,6.24185L1.28492,4.64954L0.537231,4.64954L0.537231,6.24185
+M1.22262,7.28031A0.311538,0.311538 0 1,0 0.599538,7.28031 A0.311538,0.311538 0 1,0 1.22262,7.28031 
+M1.23108,7.28031A0.32,0.32 0 1,0 0.591077,7.28031 A0.32,0.32 0 1,0 1.23108,7.28031 " style="fill:url(#grd4); stroke:none;" />
+<line x1="0.288" y1="0.556834" x2="0.876462" y2="0.0803077" style="  stroke:#000000;" />
+<line x1="0.876462" y1="0.0803077" x2="0.945692" y2="0.0803077" style="  stroke:#000000;" />
+<line x1="0.945692" y1="0.0803077" x2="1.53415" y2="0.556834" style="  stroke:#000000;" />
+<line x1="1.53415" y1="0.556834" x2="1.53415" y2="6.73081" style="  stroke:#000000;" />
+<path d="M1.53415,6.73081A0.830769,0.830769 0 1,1 0.288,6.73081 " style="  stroke:#000000;" />
+<line x1="0.288" y1="6.73081" x2="0.288" y2="0.556834" style="  stroke:#000000;" />
+<line x1="0.876462" y1="1.11877" x2="0.945692" y2="1.11877" style="  stroke:#000000;" />
+<line x1="0.945692" y1="1.11877" x2="1.28492" y2="1.39347" style="  stroke:#000000;" />
+<line x1="1.28492" y1="1.39347" x2="1.28492" y2="4.37262" style="  stroke:#000000;" />
+<line x1="1.28492" y1="4.37262" x2="0.537231" y2="4.37262" style="  stroke:#000000;" />
+<line x1="0.537231" y1="4.37262" x2="0.537231" y2="1.39347" style="  stroke:#000000;" />
+<line x1="0.537231" y1="1.39347" x2="0.876462" y2="1.11877" style="  stroke:#000000;" />
+<polygon points="0.537231,6.24185 1.28492,6.24185 1.28492,4.64954 0.537231,4.64954" style="  stroke:#000000;" />
+<circle cx="0.911077" cy="7.28031" r="0.311538" style="  stroke:#000000;" />
+<circle cx="0.911077" cy="7.28031" r="0.32" style="  stroke:#000000;" />
+<radialGradient id="grd38" spreadMethod="pad" gradientUnits="objectBoundingBox" cx="0.48" cy="0.51" r="0.5" fx="0.48" fy="0.51">
+<stop offset="0" style="stop-color:#d6d6d6"/>
+<stop offset="1" style="stop-color:#000000"/>
+</radialGradient>
+<path d="M1.22262,7.28031A0.311538,0.311538 0 1,0 0.599538,7.28031 A0.311538,0.311538 0 1,0 1.22262,7.28031 " style="fill:url(#grd38); stroke:none;" />
+</g>
+</g>
+</svg>
