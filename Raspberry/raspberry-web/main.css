@@ -1,0 +1,97 @@
+.message{
+    text-align: center;
+    color: greenyellow;
+    font-size: 100px;
+    font-family: "courier";
+    position: absolute;
+    width:100%;
+    top: 35%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+.message-image-happy{
+    background: url('../img/happy.png') no-repeat center; 
+    background-size:40%;
+    position: absolute;
+    width:100%;
+    height:100%;
+}
+.message-image-sad{
+    background: url('../img/sad.png') no-repeat center; 
+    background-size:40%;
+    position: absolute;     
+    width:100%;
+    height:100%;
+}
+.message-image-nice{
+    background: url('../img/nice.png') no-repeat center; 
+    background-size:40%;
+    position: absolute;
+    width:100%;
+    height:100%;
+}
+.message-image-minion-face{
+    background: url('../img/minionFace.png') no-repeat center; 
+    background-size:100%;
+    position: absolute;
+    width:100%;
+    height:100%;
+}
+.message-image-minion-glass{
+    background: url('../img/minionGlass.png') no-repeat center; 
+    background-size:100%;
+    position: absolute;
+    width:100%;
+    height:100%;
+}
+.message-image-minion-glass2{
+    background: url('../img/minionGlass2.png') no-repeat center; 
+    background-size:100%;
+    position: absolute;
+    width:100%;
+    height:100%;
+}
+.message-image-pacman{
+    background: url('../img/pacman.gif') no-repeat center; 
+    background-size:40%;
+    position: absolute;
+    width:100%;
+    height:100%;
+}
+.message-image-hublot{
+    background: url('../img/hublot.gif') no-repeat center; 
+    background-size:40%;
+    position: absolute;
+    width:100%;
+    height:100%;
+}
+.message-image-shark{
+    background: url('../img/shark.gif') no-repeat center; 
+    background-size:100%;
+    position: absolute;
+    width:100%;
+    height:100%;
+}
+.message-image-minion{
+    background: url('../img/minion.gif') no-repeat center; 
+    background-size:100%;
+    position: absolute;
+    width:100%;
+    height:100%;
+}
+.message-image-minion2{
+    background: url('../img/minion2.gif') no-repeat center; 
+    background-size:100%;
+    position: absolute;
+    width:100%;
+    height:100%;
+}
+.message-image-bubble{
+    background: url('../img/bubble.gif') no-repeat center; 
+    background-size:100%;
+    position: absolute;
+    width:100%;
+    height:100%;
+}

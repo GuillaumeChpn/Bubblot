@@ -86,6 +86,8 @@
                     yAxes: [{
                         type: 'linear',
                         position: 'left',
+                        min: 0,
+                        max: 100,
                         scaleLabel: {
                             display: false,
                             fontColor: "black",
@@ -93,8 +95,7 @@
                             labelString: '[mV*2]',
                         },
                         ticks: {
-                            min: 0,
-                            max: 100,
+                            stepsize: 25,
                             fontColor: "black"
                         },
                         gridLines: {

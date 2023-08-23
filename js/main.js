@@ -45,16 +45,16 @@ angular.module('bubblot', []).controller('mainController', ['$scope', '$element'
 
     $scope.leftData = {
         focusLeftIndex: 0,
-        positionClass: ["focus-left", "left-one", "left-two", "left-three", "left-four"],
-        focusOrigClass: "left-five",
+        positionClass: ["focus-left", "left-one", "left-two", "left-three", "left-four", "left-five", "left-six"],
+        focusOrigClass: "left-six",
         horizonPitch: 0,
         horizonRoll: 0,
         twistLeft: false,
         twistRight: false,
         threeDAngle: 30,
-        turbidityRed: 0,
-        turbidityBlue: 0,
-        turbidityGreen: 0,
+        turbidityRed: 10,
+        turbidityBlue: 80,
+        turbidityGreen: 80,
         magnetism: 0.5,
         magnetismXaxis: 30,
         magnetismYaxis: 50,
@@ -69,8 +69,8 @@ angular.module('bubblot', []).controller('mainController', ['$scope', '$element'
     };
     $scope.rightData = {
         focusRightIndex: 0,
-        positionClass: ["focus-right", "right-one", "right-two", "right-three", "right-four"],
-        focusOrigClass: "right-five",
+        positionClass: ["focus-right", "right-one", "right-two", "right-three", "right-four", "right-five", "right-six"],
+        focusOrigClass: "right-six",
         depth: 0,
         security: 90,
         securityAlert: false,
@@ -1853,7 +1853,7 @@ angular.module('bubblot', []).controller('mainController', ['$scope', '$element'
         }
 
         couchBubblot1.insert("bubblot", {
-            "data_key": [year, 0o6, 20, hours, minutes, seconds, 1], //change for each bubblot
+            "data_key": [year, 06, 20, hours, minutes, seconds, 1], //change for each bubblot
             "data": {
                 pumpLatitude: $scope.leftDataPump.localLat,
                 pumpLongitude: $scope.leftDataPump.localLong,

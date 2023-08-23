@@ -11280,24 +11280,3 @@
 [0416/212340.512:ERROR:http_transport_win.cc(175)] WinHttpCrackUrl: L’URL n’utilise pas un protocole reconnu (0x2ee6)
 [0420/111642.476:ERROR:http_transport_win.cc(175)] WinHttpCrackUrl: L’URL n’utilise pas un protocole reconnu (0x2ee6)
 [0420/114603.224:ERROR:http_transport_win.cc(175)] WinHttpCrackUrl: L’URL n’utilise pas un protocole reconnu (0x2ee6)
-[0712/114728.813:ERROR:process_info.cc(359)] UncheckedAllocate
-[0712/114728.881:ERROR:http_transport_win.cc(175)] WinHttpCrackUrl: L’URL n’utilise pas un protocole reconnu (0x2ee6)
-[0712/114913.044:ERROR:http_transport_win.cc(175)] WinHttpCrackUrl: L’URL n’utilise pas un protocole reconnu (0x2ee6)
-[0712/151725.432:ERROR:process_info.cc(359)] UncheckedAllocate
-[0712/151725.802:ERROR:http_transport_win.cc(175)] WinHttpCrackUrl: L’URL n’utilise pas un protocole reconnu (0x2ee6)
-[0803/045517.554:ERROR:process_info.cc(359)] UncheckedAllocate
-[0803/045517.623:WARNING:minidump_to_upload_parameters.cc(66)] duplicate annotation name metrics_client_id, discarding value 466309ea333a477391fe5899d3a4f2fc
-[0803/045517.626:ERROR:http_transport_win.cc(175)] WinHttpCrackUrl: L’URL n’utilise pas un protocole reconnu (0x2ee6)
-[0809/172422.143:ERROR:registration_protocol_win.cc(56)] CreateFile: Le fichier spécifié est introuvable. (0x2)
-[0809/180418.068:ERROR:registration_protocol_win.cc(56)] CreateFile: Le fichier spécifié est introuvable. (0x2)
-[0809/185005.045:ERROR:registration_protocol_win.cc(56)] CreateFile: Le fichier spécifié est introuvable. (0x2)
-[0809/185323.032:ERROR:registration_protocol_win.cc(56)] CreateFile: Le fichier spécifié est introuvable. (0x2)
-[0809/223124.077:ERROR:registration_protocol_win.cc(56)] CreateFile: Le fichier spécifié est introuvable. (0x2)
-[0809/230724.114:ERROR:registration_protocol_win.cc(56)] CreateFile: Le fichier spécifié est introuvable. (0x2)
-[0809/234924.289:ERROR:registration_protocol_win.cc(56)] CreateFile: Le fichier spécifié est introuvable. (0x2)
-[0810/043123.792:ERROR:registration_protocol_win.cc(56)] CreateFile: Le fichier spécifié est introuvable. (0x2)
-[0810/073124.293:ERROR:registration_protocol_win.cc(56)] CreateFile: Le fichier spécifié est introuvable. (0x2)
-[0810/090223.978:ERROR:registration_protocol_win.cc(56)] CreateFile: Le fichier spécifié est introuvable. (0x2)
-[0810/095113.483:ERROR:registration_protocol_win.cc(56)] CreateFile: Le fichier spécifié est introuvable. (0x2)
-[0810/123213.618:ERROR:crashpad_client_win.cc(174)] crash server did not respond, self-terminating
-[0810/172734.193:ERROR:crashpad_client_win.cc(174)] crash server did not respond, self-terminating
