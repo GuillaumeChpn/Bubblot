@@ -1,6 +1,4 @@
-# Bubblot
-
-Procédure d'installation
+﻿Procédure d'installation
 - npm -g install npm@next
 - npm install -g gulp dans une console administrateur
 - Installer Visual Studio 2017 Community avec le module C++ uniquement (tout cocher module c++)
