@@ -105,6 +105,10 @@ angular.module('bubblot', []).controller('mainController', ['$scope', '$element'
         cameraPlay: false,
         help: false,
         sonarDistance: 100,
+        cameraOdomMsg :"",
+        cameraOdomArray:[0,0,0],
+        cameraOdomTime:0,
+        cameraOdomAngle:0
     };
     $scope.leftDataPump = {
         focusLeftIndex: 0,
@@ -1197,6 +1201,8 @@ angular.module('bubblot', []).controller('mainController', ['$scope', '$element'
             if ($scope.notifData.recData) intervalDataSave = setInterval(saveData, 2000);
             else clearInterval(intervalDataSave);
         });
+
+        cameraOdometry();
     }
     var button11Pressed = false, button4Pressed = false, button2Pressed = false, button5Pressed = false, button3Pressed = false, button1Pressed=false,motorButtonWasPressed=false,motorActive=false;
     var coeffRadius=60, kZ=1, multiplier=0;
@@ -1636,6 +1642,33 @@ angular.module('bubblot', []).controller('mainController', ['$scope', '$element'
             }
         }
     }
+    function cameraOdometry(){
+        
+        const { spawn } = require('child_process');    
+        const sensor = spawn('python', ['py/visual_odometry.py']);
+
+        sensor.stdout.on('data', function(data) {
+
+            datastring=data.toString().split("\n")
+            console.log(datastring)
+            parsedArray= JSON.parse(datastring[1])
+            $scope.rightData.cameraOdomArray=parsedArray.map(value=>parseFloat(value))
+            $scope.rightData.cameraOdomMsg=datastring[0]
+            $scope.rightData.cameraOdomTime=datastring[2]
+            $scope.rightData.cameraOdomAngle=parseFloat(datastring[3])
+
+            console.log("movement type : ",$scope.rightData.cameraOdomMsg, "Correcting vector : ", $scope.rightData.cameraOdomArray,"Time :",$scope.rightData.cameraOdomTime,"Yaw angle:",$scope.rightData.cameraOdomAngle);
+            $scope.$apply();
+        });
+        // sensor.on('exit', function (code, signal) {
+        //     console.log('child process exited with ' +
+        //                 `code ${code} and signal ${signal}`);
+        //   });
+        // sensor.stderr.on('data', (data) => {
+        //     console.error(`child stderr:\n${data}`);
+        //     });
+        
+    }
     function computeCompass(object, value) {
         $scope.leftDataPump.gpsCompass = value;
         $scope.$apply();
@@ -1853,7 +1886,7 @@ angular.module('bubblot', []).controller('mainController', ['$scope', '$element'
         }
 
         couchBubblot1.insert("bubblot", {
-            "data_key": [year, 06, 20, hours, minutes, seconds, 1], //change for each bubblot
+            "data_key": [year, 0o6, 20, hours, minutes, seconds, 1], //change for each bubblot
             "data": {
                 pumpLatitude: $scope.leftDataPump.localLat,
                 pumpLongitude: $scope.leftDataPump.localLong,

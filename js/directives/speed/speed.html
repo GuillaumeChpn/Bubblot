@@ -1,0 +1,11 @@
+<div id="thrust" class="cadrans-container thrust">
+    <div class="cadran" drag-circle angle-min="225" range="270" position="thrust"></div>
+    <div class="progress-pie"></div>
+    <div class="triangle-container" style="transform: translate3d(-50%,-50%, 0) rotate(0deg)">
+        <div class="triangle" style="transform: perspective(50px) translate3d({{50*cameraOdomArray[0]}}%,{{50*cameraOdomArray[1]}}%, {{20*cameraOdomArray[2]}}px) rotate({{cameraOdomAngle}}deg)"></div>
+    </div>
+    <div class="thrust-top-btn" ng-class="{on:thrustTopSwitchOn}" ng-click="thrustTopSwitchOn=!thrustTopSwitchOn"></div>
+    <div class="thrust-bottom-btn" ng-class="{on:thrustBottomSwitchOn}" ng-click="thrustBottomSwitchOn=!thrustBottomSwitchOn"></div>
+    <circle-progress value="thrust" circle-size="circleSize" circle-thickness="circleThickness" circle-ratio="0.75" circle-color=0/>
+    <p class="shortcut-thrust" ng-class="{on:help}">Scroll</p>
+</div>
