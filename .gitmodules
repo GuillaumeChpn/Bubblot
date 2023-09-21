@@ -1,0 +1,3 @@
+[submodule "3DScanner"]
+	path = 3DScanner
+	url = https://github.com/GuillaumeChpn/3DScanner.git
